@@ -1,0 +1,1175 @@
+/*************************************************************************************/
+//
+
+// Description: 
+
+// Created: 
+
+// Author: 
+
+// Version: 
+
+// Vehicle Project: 
+
+// 
+
+/*************************************************************************************/
+
+LIN_description_file;
+LIN_protocol_version = "2.1";
+LIN_language_version = "2.1";
+LIN_speed = 19.2 kbps;
+
+Nodes {
+  Master: BCM, 10 ms, 0.1 ms ;
+  Slaves: LFWL, RFWL, LRWL, RRWL, RLS ;
+}
+
+Signals {
+  L_BCM_WdwEnable: 1, 0, BCM, LFWL, RFWL, LRWL, RRWL ;
+  L_BCM_LockCommand: 2, 0, BCM, LFWL, RFWL, LRWL, RRWL ;
+  L_BCM_GlobalClose: 2, 0, BCM, LFWL, RFWL, LRWL, RRWL ;
+  L_BCM_GlobalOpen: 2, 0, BCM, LFWL, RFWL, LRWL, RRWL ;
+  L_BCM_ChildLockSt: 1, 0, BCM, LFWL, RFWL, LRWL, RRWL ;
+  L_Pas_Wdw_CenterSwitch: 3, 0, BCM, LFWL, RFWL, LRWL, RRWL ;
+  L_RLD_Wdw_CenterSwitch: 3, 0, BCM, LFWL, RFWL, LRWL, RRWL ;
+  L_RRD_Wdw_CenterSwitch: 3, 0, BCM, LFWL, RFWL, LRWL, RRWL ;
+  L_Drv_ControlCommand: 7, 0, BCM, LFWL, RFWL, LRWL, RRWL ;
+  L_Pas_ControlCommand: 7, 0, BCM, LFWL, RFWL, LRWL, RRWL ;
+  L_RLD_ControlCommand: 7, 0, BCM, LFWL, RFWL, LRWL, RRWL ;
+  L_RRD_ControlCommand: 7, 0, BCM, LFWL, RFWL, LRWL, RRWL ;
+  L_EMS_EngStatus: 3, 0, BCM, LFWL, RFWL, LRWL, RRWL, RLS ;
+  L_BCM_RS_WiperHPInfo: 1, 0, BCM, RLS ;
+  L_BCM_RS_LowSpOutput: 1, 0, BCM, RLS ;
+  L_BCM_RS_HighSpOutput: 1, 0, BCM, RLS ;
+  L_BCM_RS_ManWaInfo: 1, 0, BCM, RLS ;
+  L_BCM_RS_RainSwSts: 4, 0, BCM, RLS ;
+  L_RLS_ModeEnable: 2, 0, BCM, RLS ;
+  L_All_Wdw_Closed: 2, 0, BCM, RLS ;
+  L_PEPS_PowerModeValidity: 2, 0, BCM, LFWL, RFWL, LRWL, RRWL, RLS ;
+  L_PEPS_PowerMode: 3, 0, BCM, LFWL, RFWL, LRWL, RRWL, RLS ;
+  L_BCM_VehicleSpeed: 13, 0, BCM, LFWL, RFWL, LRWL, RRWL, RLS ;
+  L_BCM_OutdoorTemp: 8, 0, BCM, LFWL, RFWL, LRWL, RRWL, RLS ;
+  L_BCM_VehicleType_Reserved: 3, 0, BCM, LFWL, RFWL, LRWL, RRWL, RLS ;
+  L_Screen_Type_Reserved: 3, 0, BCM, RLS ;
+  L_Steer_Whl_Type_Reserved: 2, 0, BCM, LFWL, RFWL, LRWL, RRWL, RLS ;
+  L_Rain_Sensitivity: 4, 0, BCM, RLS ;
+  L_RS_RainfallLevel: 2, 0, RLS, BCM ;
+  L_RS_WiperAutoSpReq: 4, 0, RLS, BCM ;
+  L_Err_State_Cal_RS_Reserved: 2, 0, RLS, BCM ;
+  L_RS_RainSensorError: 1, 0, RLS, BCM ;
+  RS_Sensor_01_LIN_Response_Error: 1, 0, RLS, BCM ;
+  L_Status_Rain_Sens: 4, 0, RLS, BCM ;
+  L_Sunroof_Win_CloseReq: 2, 0, RLS, BCM ;
+  L_RLS_ModeSts: 1, 0, RLS, BCM ;
+  L_RS_SolarSensorError: 1, 0, RLS, BCM ;
+  L_Signal_Error: 2, 0, RLS, BCM ;
+  L_Value_Solar_Right_Sens: 8, 0, RLS, BCM ;
+  L_Value_Solar_Left_Sens: 8, 0, RLS, BCM ;
+  L_Err_State_Light_Sens: 2, 0, RLS, BCM ;
+  L_Light_Switch_Request: 2, 0, RLS, BCM ;
+  L_Status_Light_Sens: 2, 0, RLS, BCM ;
+  L_Err_State_Coding: 2, 0, RLS, BCM ;
+  L_Light_Switch_Reason: 8, 0, RLS, BCM ;
+  L_Light_HudBrightnessValue: 7, 0, RLS, BCM ;
+  L_Light_HudBrightnessUnit: 2, 0, RLS, BCM ;
+  L_Err_State_Over_Volt: 2, 0, RLS, BCM ;
+  L_Err_State_Over_Temp: 2, 0, RLS, BCM ;
+  L_RH_Sens: 8, 0, RLS, BCM ;
+  L_Window_Temp: 11, 0, RLS, BCM ;
+  L_DP_Temp: 11, 0, RLS, BCM ;
+  L_Err_State_Humidity_Sens: 1, 0, RLS, BCM ;
+  L_Drv_Wdw_Running_Sts: 3, 0, LFWL, BCM ;
+  L_Drv_Wdw_CenterSwitch: 3, 0, LFWL, BCM ;
+  L_Drv_Wdw_PositionSts: 2, 0, LFWL, BCM ;
+  L_Drv_Val_Wdw_Opened: 7, 0, LFWL, BCM ;
+  L_Drv_HALL_Error: 1, 0, LFWL, BCM ;
+  L_Drv_Motor_Relay_Error: 1, 0, LFWL, BCM ;
+  L_Drv_OverHeat_Protect: 1, 0, LFWL, BCM ;
+  L_Drv_Wdw_Init: 1, 0, LFWL, BCM ;
+  DDAPWL_01_LIN_Response_Error: 1, 0, LFWL, BCM ;
+  L_Drv_UnderVoltage: 1, 0, LFWL, BCM ;
+  L_Drv_OverVoltage: 1, 0, LFWL, BCM ;
+  L_Drv_Wdw_OD_Sts: 1, 0, LFWL, BCM ;
+  L_Drv_Wdw_Obs_InhibitSts: 1, 0, LFWL, BCM ;
+  L_Pas_Wdw_Running_Sts: 3, 0, RFWL, BCM ;
+  L_Pas_Wdw_LocalSwitch: 3, 0, RFWL, BCM ;
+  L_Pas_Wdw_PositionSts: 2, 0, RFWL, BCM ;
+  L_Pas_Val_Wdw_Opened: 7, 0, RFWL, BCM ;
+  L_Pas_HALL_Error: 1, 0, RFWL, BCM ;
+  L_Pas_Motor_Relay_Error: 1, 0, RFWL, BCM ;
+  L_Pas_OverHeat_Protect: 1, 0, RFWL, BCM ;
+  L_Pas_Wdw_Init: 1, 0, RFWL, BCM ;
+  PDAPWL_01_LIN_Response_Error: 1, 0, RFWL, BCM ;
+  L_Pas_UnderVoltage: 1, 0, RFWL, BCM ;
+  L_Pas_OverVoltage: 1, 0, RFWL, BCM ;
+  L_Pas_Wdw_OD_Sts: 1, 0, RFWL, BCM ;
+  L_Pas_Wdw_Obs_InhibitSts: 1, 0, RFWL, BCM ;
+  L_RLD_Wdw_Running_Sts: 3, 0, LRWL, BCM ;
+  L_RLD_Wdw_LocalSwitch: 3, 0, LRWL, BCM ;
+  L_RLD_Wdw_PositionSts: 2, 0, LRWL, BCM ;
+  L_RLD_Val_Wdw_Opened: 7, 0, LRWL, BCM ;
+  L_RLD_HALL_Error: 1, 0, LRWL, BCM ;
+  L_RLD_Motor_Relay_Error: 1, 0, LRWL, BCM ;
+  L_RLD_OverHeat_Protect: 1, 0, LRWL, BCM ;
+  L_RLD_Wdw_Init: 1, 0, LRWL, BCM ;
+  RLAPWL_01_LIN_Response_Error: 1, 0, LRWL, BCM ;
+  L_RLUnderVoltage: 1, 0, LRWL, BCM ;
+  L_RLOverVoltage: 1, 0, LRWL, BCM ;
+  L_RLD_Wdw_OD_Sts: 1, 0, LRWL, BCM ;
+  L_RLD_Wdw_Obs_InhibitSts: 1, 0, LRWL, BCM ;
+  L_RRD_Wdw_Running_Sts: 3, 0, RRWL, BCM ;
+  L_RRD_Wdw_LocalSwitch: 3, 0, RRWL, BCM ;
+  L_RRD_Wdw_PositionSts: 2, 0, RRWL, BCM ;
+  L_RRD_Val_Wdw_Opened: 7, 0, RRWL, BCM ;
+  L_RRD_SHALL_Error: 1, 0, RRWL, BCM ;
+  L_RRD_SMotor_Relay_Error: 1, 0, RRWL, BCM ;
+  L_RRD_SOverHeat_Protect: 1, 0, RRWL, BCM ;
+  L_RRD_Wdw_Init: 1, 0, RRWL, BCM ;
+  RRAPWL_01_LIN_Response_Error: 1, 0, RRWL, BCM ;
+  L_RRUnderVoltage: 1, 0, RRWL, BCM ;
+  L_RROverVoltage: 1, 0, RRWL, BCM ;
+  L_RRD_Wdw_OD_Sts: 1, 0, RRWL, BCM ;
+  L_RRD_Wdw_Obs_InhibitSts: 1, 0, RRWL, BCM ;
+  L_BCM_Window_StopCommand: 1, 0, BCM, LFWL, RFWL, LRWL, RRWL ;
+}
+
+Diagnostic_signals {
+  MasterReqB0: 8, 0 ;
+  MasterReqB1: 8, 0 ;
+  MasterReqB2: 8, 0 ;
+  MasterReqB3: 8, 0 ;
+  MasterReqB4: 8, 0 ;
+  MasterReqB5: 8, 0 ;
+  MasterReqB6: 8, 0 ;
+  MasterReqB7: 8, 0 ;
+  SlaveRespB0: 8, 0 ;
+  SlaveRespB1: 8, 0 ;
+  SlaveRespB2: 8, 0 ;
+  SlaveRespB3: 8, 0 ;
+  SlaveRespB4: 8, 0 ;
+  SlaveRespB5: 8, 0 ;
+  SlaveRespB6: 8, 0 ;
+  SlaveRespB7: 8, 0 ;
+}
+
+
+
+Frames {
+  BCM_01: 49, BCM, 8 {
+    L_BCM_WdwEnable, 0 ;
+    L_BCM_LockCommand, 1 ;
+    L_BCM_GlobalClose, 3 ;
+    L_BCM_GlobalOpen, 5 ;
+    L_BCM_ChildLockSt, 7 ;
+    L_Pas_Wdw_CenterSwitch, 8 ;
+    L_RLD_Wdw_CenterSwitch, 13 ;
+    L_RRD_Wdw_CenterSwitch, 16 ;
+    L_Drv_ControlCommand, 32 ;
+    L_Pas_ControlCommand, 40 ;
+    L_RLD_ControlCommand, 48 ;
+    L_RRD_ControlCommand, 56 ;
+    L_BCM_Window_StopCommand, 11 ;
+  }
+  BCM_02: 50, BCM, 8 {
+    L_EMS_EngStatus, 0 ;
+    L_BCM_RS_WiperHPInfo, 3 ;
+    L_BCM_RS_LowSpOutput, 4 ;
+    L_BCM_RS_HighSpOutput, 5 ;
+    L_BCM_RS_ManWaInfo, 6 ;
+    L_BCM_RS_RainSwSts, 8 ;
+    L_RLS_ModeEnable, 12 ;
+    L_All_Wdw_Closed, 14 ;
+    L_PEPS_PowerModeValidity, 16 ;
+    L_PEPS_PowerMode, 18 ;
+    L_BCM_VehicleSpeed, 27 ;
+    L_BCM_OutdoorTemp, 40 ;
+    L_BCM_VehicleType_Reserved, 48 ;
+    L_Screen_Type_Reserved, 51 ;
+    L_Steer_Whl_Type_Reserved, 54 ;
+    L_Rain_Sensitivity, 58 ;
+  }
+  RS_SENSOR_01: 21, RLS, 8 {
+    L_RS_RainfallLevel, 2 ;
+    L_RS_WiperAutoSpReq, 4 ;
+    L_Err_State_Cal_RS_Reserved, 28 ;
+    L_RS_RainSensorError, 30 ;
+    RS_Sensor_01_LIN_Response_Error, 31 ;
+    L_Status_Rain_Sens, 32 ;
+    L_Sunroof_Win_CloseReq, 36 ;
+    L_RLS_ModeSts, 38 ;
+    L_RS_SolarSensorError, 40 ;
+    L_Signal_Error, 42 ;
+    L_Value_Solar_Right_Sens, 48 ;
+    L_Value_Solar_Left_Sens, 56 ;
+  }
+  RS_SENSOR_02: 22, RLS, 8 {
+    L_Err_State_Light_Sens, 0 ;
+    L_Light_Switch_Request, 2 ;
+    L_Status_Light_Sens, 4 ;
+    L_Err_State_Coding, 6 ;
+    L_Light_Switch_Reason, 8 ;
+    L_Light_HudBrightnessValue, 16 ;
+    L_Light_HudBrightnessUnit, 24 ;
+    L_Err_State_Over_Volt, 28 ;
+    L_Err_State_Over_Temp, 30 ;
+    L_RH_Sens, 32 ;
+    L_Window_Temp, 40 ;
+    L_DP_Temp, 51 ;
+    L_Err_State_Humidity_Sens, 62 ;
+  }
+  DDAPWL_01: 16, LFWL, 8 {
+    L_Drv_Wdw_Running_Sts, 0 ;
+    L_Drv_Wdw_CenterSwitch, 3 ;
+    L_Drv_Wdw_PositionSts, 6 ;
+    L_Drv_Val_Wdw_Opened, 8 ;
+    L_Drv_HALL_Error, 15 ;
+    L_Drv_Motor_Relay_Error, 16 ;
+    L_Drv_OverHeat_Protect, 17 ;
+    L_Drv_Wdw_Init, 18 ;
+    DDAPWL_01_LIN_Response_Error, 19 ;
+    L_Drv_UnderVoltage, 20 ;
+    L_Drv_OverVoltage, 21 ;
+    L_Drv_Wdw_OD_Sts, 22 ;
+    L_Drv_Wdw_Obs_InhibitSts, 23 ;
+  }
+  PDAPWL_01: 17, RFWL, 8 {
+    L_Pas_Wdw_Running_Sts, 0 ;
+    L_Pas_Wdw_LocalSwitch, 3 ;
+    L_Pas_Wdw_PositionSts, 6 ;
+    L_Pas_Val_Wdw_Opened, 8 ;
+    L_Pas_HALL_Error, 15 ;
+    L_Pas_Motor_Relay_Error, 16 ;
+    L_Pas_OverHeat_Protect, 17 ;
+    L_Pas_Wdw_Init, 18 ;
+    PDAPWL_01_LIN_Response_Error, 19 ;
+    L_Pas_UnderVoltage, 20 ;
+    L_Pas_OverVoltage, 21 ;
+    L_Pas_Wdw_OD_Sts, 22 ;
+    L_Pas_Wdw_Obs_InhibitSts, 23 ;
+  }
+  RLAPWL_01: 18, LRWL, 8 {
+    L_RLD_Wdw_Running_Sts, 0 ;
+    L_RLD_Wdw_LocalSwitch, 3 ;
+    L_RLD_Wdw_PositionSts, 6 ;
+    L_RLD_Val_Wdw_Opened, 8 ;
+    L_RLD_HALL_Error, 15 ;
+    L_RLD_Motor_Relay_Error, 16 ;
+    L_RLD_OverHeat_Protect, 17 ;
+    L_RLD_Wdw_Init, 18 ;
+    RLAPWL_01_LIN_Response_Error, 19 ;
+    L_RLUnderVoltage, 20 ;
+    L_RLOverVoltage, 21 ;
+    L_RLD_Wdw_OD_Sts, 22 ;
+    L_RLD_Wdw_Obs_InhibitSts, 23 ;
+  }
+  RRAPWL_01: 19, RRWL, 8 {
+    L_RRD_Wdw_Running_Sts, 0 ;
+    L_RRD_Wdw_LocalSwitch, 3 ;
+    L_RRD_Wdw_PositionSts, 6 ;
+    L_RRD_Val_Wdw_Opened, 8 ;
+    L_RRD_SHALL_Error, 15 ;
+    L_RRD_SMotor_Relay_Error, 16 ;
+    L_RRD_SOverHeat_Protect, 17 ;
+    L_RRD_Wdw_Init, 18 ;
+    RRAPWL_01_LIN_Response_Error, 19 ;
+    L_RRUnderVoltage, 20 ;
+    L_RROverVoltage, 21 ;
+    L_RRD_Wdw_OD_Sts, 22 ;
+    L_RRD_Wdw_Obs_InhibitSts, 23 ;
+  }
+}
+
+
+
+Diagnostic_frames {
+  MasterReq: 0x3c {
+    MasterReqB0, 0 ;
+    MasterReqB1, 8 ;
+    MasterReqB2, 16 ;
+    MasterReqB3, 24 ;
+    MasterReqB4, 32 ;
+    MasterReqB5, 40 ;
+    MasterReqB6, 48 ;
+    MasterReqB7, 56 ;
+  }
+  SlaveResp: 0x3d {
+    SlaveRespB0, 0 ;
+    SlaveRespB1, 8 ;
+    SlaveRespB2, 16 ;
+    SlaveRespB3, 24 ;
+    SlaveRespB4, 32 ;
+    SlaveRespB5, 40 ;
+    SlaveRespB6, 48 ;
+    SlaveRespB7, 56 ;
+  }
+}
+
+Node_attributes {
+  LFWL{
+    LIN_protocol = "2.1" ;
+    configured_NAD = 0x2 ;
+    initial_NAD = 0x2 ;
+    product_id = 0x0, 0x0, 0 ;
+	response_error = DDAPWL_01_LIN_Response_Error ;
+    P2_min = 50 ms ;
+    ST_min = 0 ms ;
+    N_As_timeout = 1000 ms ;
+    N_Cr_timeout = 1000 ms ;
+    configurable_frames {
+      DDAPWL_01 ;
+      BCM_01 ;
+      BCM_02 ;
+    }
+  }
+  RFWL{
+    LIN_protocol = "2.1" ;
+    configured_NAD = 0x3 ;
+    initial_NAD = 0x3 ;
+    product_id = 0x0, 0x0, 0 ;
+	response_error = PDAPWL_01_LIN_Response_Error ;
+    P2_min = 50 ms ;
+    ST_min = 0 ms ;
+    N_As_timeout = 1000 ms ;
+    N_Cr_timeout = 1000 ms ;
+    configurable_frames {
+      PDAPWL_01 ;
+      BCM_01 ;
+      BCM_02 ;
+    }
+  }
+  LRWL{
+    LIN_protocol = "2.1" ;
+    configured_NAD = 0x4 ;
+    initial_NAD = 0x4 ;
+    product_id = 0x0, 0x0, 0 ;
+	response_error = RLAPWL_01_LIN_Response_Error ;
+    P2_min = 50 ms ;
+    ST_min = 0 ms ;
+    N_As_timeout = 1000 ms ;
+    N_Cr_timeout = 1000 ms ;
+    configurable_frames {
+      RLAPWL_01 ;
+      BCM_01 ;
+      BCM_02 ;
+    }
+  }
+  RRWL{
+    LIN_protocol = "2.1" ;
+    configured_NAD = 0x5 ;
+    initial_NAD = 0x5 ;
+    product_id = 0x0, 0x0, 0 ;
+	response_error = RRAPWL_01_LIN_Response_Error ;
+    P2_min = 50 ms ;
+    ST_min = 0 ms ;
+    N_As_timeout = 1000 ms ;
+    N_Cr_timeout = 1000 ms ;
+    configurable_frames {
+      RRAPWL_01 ;
+      BCM_01 ;
+      BCM_02 ;
+    }
+  }
+  RLS{
+    LIN_protocol = "2.1" ;
+    configured_NAD = 0x6 ;
+    initial_NAD = 0x6 ;
+    product_id = 0x0, 0x0, 0 ;
+	response_error = RS_Sensor_01_LIN_Response_Error ;
+    P2_min = 50 ms ;
+    ST_min = 0 ms ;
+    N_As_timeout = 1000 ms ;
+    N_Cr_timeout = 1000 ms ;
+    configurable_frames {
+      RS_SENSOR_01 ;
+      RS_SENSOR_02 ;
+      BCM_02 ;
+    }
+  }
+}
+
+Schedule_tables {
+ Schedule_Normal {
+    BCM_01 delay 10 ms ;
+    BCM_02 delay 10 ms ;
+    RS_SENSOR_01 delay 10 ms ;
+    RS_SENSOR_02 delay 10 ms ;
+    DDAPWL_01 delay 10 ms ;
+    BCM_01 delay 10 ms ;
+    BCM_02 delay 10 ms ;
+    PDAPWL_01 delay 10 ms ;
+    RLAPWL_01 delay 10 ms ;
+    RRAPWL_01 delay 10 ms ;
+    BCM_01 delay 10 ms ;
+  }
+ Schedule_DiagRequest {
+    MasterReq delay 10 ms ;
+  }
+ Schedule_DiagResponse {
+    SlaveResp delay 10 ms ;
+  }
+}
+
+
+Signal_encoding_types {
+  DDAPWL_01_LIN_Response_Error {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "Error" ;
+  }
+  L_All_Wdw_Closed {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "Incomplete Close" ;
+    logical_value, 1, "Complete Close" ;
+    logical_value, 2, "Reserved" ;
+    logical_value, 3, "Invalid" ;
+  }
+  L_BCM_ChildLockSt {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Unlock" ;
+    logical_value, 1, "Lock" ;
+  }
+  L_BCM_GlobalClose {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "No action" ;
+    logical_value, 1, "Global Close" ;
+    logical_value, 2, "Reserved" ;
+    logical_value, 3, "Reserved" ;
+  }
+  L_BCM_GlobalOpen {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "No action" ;
+    logical_value, 1, "Global Open" ;
+    logical_value, 2, "Reserved" ;
+    logical_value, 3, "Reserved" ;
+  }
+  L_BCM_LockCommand {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "No command" ;
+    logical_value, 1, "All door lock" ;
+    logical_value, 2, "All door unlock" ;
+    logical_value, 3, "Reserved" ;
+  }
+  L_BCM_OutdoorTemp {
+    physical_value, 0, 200, 0.5, -40, "?" ;
+    logical_value, 201, "Invalid" ;
+  }
+  L_BCM_RS_HighSpOutput {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "No action" ;
+    logical_value, 1, "High speed wiper" ;
+  }
+  L_BCM_RS_LowSpOutput {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "No action" ;
+    logical_value, 1, "Low speed wiper" ;
+  }
+  L_BCM_RS_ManWaInfo {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Washer not work" ;
+    logical_value, 1, "Wahser work" ;
+  }
+  L_BCM_RS_RainSwSts {
+    physical_value, 0, 15, 1, 0, "bit" ;
+    logical_value, 0, "Off" ;
+    logical_value, 1, "Mist" ;
+    logical_value, 2, "Low speed" ;
+    logical_value, 3, "High speed" ;
+    logical_value, 4, "Reserved" ;
+    logical_value, 5, "Auto" ;
+    logical_value, 6, "Intermission" ;
+  }
+  L_BCM_RS_WiperHPInfo {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Not on park" ;
+    logical_value, 1, "On Park" ;
+  }
+  L_BCM_VehicleSpeed {
+    physical_value, 0, 8190, 0.05625, 0, "KPH" ;
+    logical_value, 8191, "Invalid" ;
+  }
+  L_BCM_VehicleType_Reserved {
+    physical_value, 0, 7, 1, 0, "bit" ;
+    logical_value, 0, "GC-1" ;
+    logical_value, 1, "NL-1" ;
+    logical_value, 2, "KC-1" ;
+    logical_value, 3, "FE-5/7" ;
+    logical_value, 4, "KC-2" ;
+    logical_value, 5, "FE-6" ;
+    logical_value, 6, "Reserved" ;
+    logical_value, 7, "Invalid" ;
+  }
+  L_BCM_WdwEnable {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Inhibit" ;
+    logical_value, 1, "Normal" ;
+  }
+  L_DP_Temp {
+    physical_value, 0, 1396, 0.1, -39.6, "?" ;
+  }
+  L_Drv_ControlCommand {
+    physical_value, 0, 100, 1, 0, "%" ;
+    logical_value, 127, "No Request" ;
+  }
+  L_Drv_HALL_Error {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "Error" ;
+  }
+  L_Drv_Motor_Relay_Error {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "Error" ;
+  }
+  L_Drv_OverHeat_Protect {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Inactive" ;
+    logical_value, 1, "Active" ;
+  }
+  L_Drv_OverVoltage {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "OverVoltage" ;
+  }
+  L_Drv_UnderVoltage {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "UnderVoltage" ;
+  }
+  L_Drv_Val_Wdw_Opened {
+    physical_value, 0, 100, 1, 0, "%" ;
+    logical_value, 127, "Invalid" ;
+  }
+  L_Drv_Wdw_CenterSwitch {
+    physical_value, 0, 7, 1, 0, "bit" ;
+    logical_value, 0, "Inactive" ;
+    logical_value, 1, "Manual Up" ;
+    logical_value, 2, "Manual Down" ;
+    logical_value, 3, "Auto Up" ;
+    logical_value, 4, "Auto Down" ;
+    logical_value, 5, "Reserved" ;
+    logical_value, 6, "Reserved" ;
+    logical_value, 7, "Error" ;
+  }
+  L_Drv_Wdw_Init {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Window init incomplete" ;
+    logical_value, 1, "Window init complete" ;
+  }
+  L_Drv_Wdw_OD_Sts {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Non anti-pinch status" ;
+    logical_value, 1, "In Anti-pinch status" ;
+  }
+  L_Drv_Wdw_Obs_InhibitSts {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Not Obs Inhibit status" ;
+    logical_value, 1, "Obs Inhibit status" ;
+  }
+  L_Drv_Wdw_PositionSts {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "Middle position" ;
+    logical_value, 1, "Complete Open" ;
+    logical_value, 2, "Complete Close" ;
+    logical_value, 3, "Invalid" ;
+  }
+  L_Drv_Wdw_Running_Sts {
+    physical_value, 0, 7, 1, 0, "bit" ;
+    logical_value, 0, "Window stop" ;
+    logical_value, 1, "Manual Up" ;
+    logical_value, 2, "Manual Down" ;
+    logical_value, 3, "Auto Up" ;
+    logical_value, 4, "Auto Down" ;
+  }
+  L_EMS_EngStatus {
+    physical_value, 0, 7, 1, 0, "bit" ;
+    logical_value, 0, "Engine Stop" ;
+    logical_value, 1, "Cranking" ;
+    logical_value, 2, "Reserved" ;
+    logical_value, 3, "Running" ;
+    logical_value, 4, "Reserved" ;
+    logical_value, 5, "Reserved" ;
+    logical_value, 6, "Reserved" ;
+    logical_value, 7, "Fault" ;
+  }
+  L_Err_State_Cal_RS_Reserved {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "No Error" ;
+    logical_value, 1, "Error" ;
+    logical_value, 2, "Reserved" ;
+    logical_value, 3, "Invalid" ;
+  }
+  L_Err_State_Coding {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "No error" ;
+    logical_value, 1, "Error active" ;
+    logical_value, 2, "Reserved" ;
+    logical_value, 3, "Invalid" ;
+  }
+  L_Err_State_Humidity_Sens {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "No Error" ;
+    logical_value, 1, "Error" ;
+  }
+  L_Err_State_Light_Sens {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "No error" ;
+    logical_value, 1, "Error active" ;
+    logical_value, 2, "Reserved" ;
+    logical_value, 3, "Invalid" ;
+  }
+  L_Err_State_Over_Temp {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "No Error" ;
+    logical_value, 1, "Error" ;
+    logical_value, 2, "Reserved" ;
+    logical_value, 3, "Invalid" ;
+  }
+  L_Err_State_Over_Volt {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "No Error" ;
+    logical_value, 1, "Error" ;
+    logical_value, 2, "Reserved" ;
+    logical_value, 3, "Invalid" ;
+  }
+  L_Light_HudBrightnessUnit {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "No Level" ;
+    logical_value, 1, "100 lux" ;
+    logical_value, 2, "1000 lux" ;
+  }
+  L_Light_HudBrightnessValue {
+    physical_value, 0, 126, 1, 0, "bit" ;
+  }
+  L_Light_Switch_Reason {
+    physical_value, 0, 255, 1, 0, "bit" ;
+    logical_value, 0, "Day" ;
+    logical_value, 1, "Twilight" ;
+    logical_value, 2, "Darkness" ;
+    logical_value, 3, "Precipitation" ;
+    logical_value, 4, "Tunnel" ;
+    logical_value, 16, "Underground car park" ;
+    logical_value, 32, "High Speed" ;
+    logical_value, 64, "Reserved" ;
+    logical_value, 128, "Reserved" ;
+    logical_value, 255, "Invalid" ;
+  }
+  L_Light_Switch_Request {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "Switch light off" ;
+    logical_value, 1, "Switch light on" ;
+    logical_value, 2, "Reserved" ;
+    logical_value, 3, "Invalid" ;
+  }
+  L_PEPS_PowerMode {
+    physical_value, 0, 7, 1, 0, "bit" ;
+    logical_value, 0, "OFF" ;
+    logical_value, 1, "ACC" ;
+    logical_value, 2, "ON" ;
+    logical_value, 3, "Reserved" ;
+    logical_value, 4, "START" ;
+  }
+  L_PEPS_PowerModeValidity {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "Not available" ;
+    logical_value, 1, "Invalid" ;
+    logical_value, 2, "Valid" ;
+    logical_value, 3, "Reserved" ;
+  }
+  L_Pas_ControlCommand {
+    physical_value, 0, 100, 1, 0, "%" ;
+    logical_value, 127, "No Request" ;
+  }
+  L_Pas_HALL_Error {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "Error" ;
+  }
+  L_Pas_Motor_Relay_Error {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "Error" ;
+  }
+  L_Pas_OverHeat_Protect {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Inactive" ;
+    logical_value, 1, "Active" ;
+  }
+  L_Pas_OverVoltage {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "OverVoltage" ;
+  }
+  L_Pas_UnderVoltage {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "UnderVoltage" ;
+  }
+  L_Pas_Val_Wdw_Opened {
+    physical_value, 0, 100, 1, 0, "%" ;
+    logical_value, 127, "Invalid" ;
+  }
+  L_Pas_Wdw_CenterSwitch {
+    physical_value, 0, 7, 1, 0, "bit" ;
+    logical_value, 0, "Inactive" ;
+    logical_value, 1, "Manual Up" ;
+    logical_value, 2, "Manual Down" ;
+    logical_value, 3, "Auto Up" ;
+    logical_value, 4, "Auto Down" ;
+    logical_value, 5, "Reserved" ;
+    logical_value, 6, "Reserved" ;
+    logical_value, 7, "Error" ;
+  }
+  L_Pas_Wdw_Init {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Window init incomplete" ;
+    logical_value, 1, "Window init complete" ;
+  }
+  L_Pas_Wdw_LocalSwitch {
+    physical_value, 0, 7, 1, 0, "bit" ;
+    logical_value, 0, "Inactive" ;
+    logical_value, 1, "Manual Up" ;
+    logical_value, 2, "Manual Down" ;
+    logical_value, 3, "Auto Up" ;
+    logical_value, 4, "Auto Down" ;
+    logical_value, 5, "Reserved" ;
+    logical_value, 6, "Reserved" ;
+    logical_value, 7, "Error" ;
+  }
+  L_Pas_Wdw_OD_Sts {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Non anti-pinch status" ;
+    logical_value, 1, "In Anti-pinch status" ;
+  }
+  L_Pas_Wdw_Obs_InhibitSts {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Not Obs Inhibit status" ;
+    logical_value, 1, "Obs Inhibit status" ;
+  }
+  L_Pas_Wdw_PositionSts {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "Middle position" ;
+    logical_value, 1, "Complete Open" ;
+    logical_value, 2, "Complete Close" ;
+    logical_value, 3, "Invalid" ;
+  }
+  L_Pas_Wdw_Running_Sts {
+    physical_value, 0, 7, 1, 0, "bit" ;
+    logical_value, 0, "Window stop" ;
+    logical_value, 1, "Manual Up" ;
+    logical_value, 2, "Manual Down" ;
+    logical_value, 3, "Auto Up" ;
+    logical_value, 4, "Auto Down" ;
+  }
+  L_RH_Sens {
+    physical_value, 0, 202, 0.5, -0.5, "%" ;
+  }
+  L_RLD_ControlCommand {
+    physical_value, 0, 100, 1, 0, "%" ;
+    logical_value, 127, "No Request" ;
+  }
+  L_RLD_HALL_Error {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "Error" ;
+  }
+  L_RLD_Motor_Relay_Error {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "Error" ;
+  }
+  L_RLD_OverHeat_Protect {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Inactive" ;
+    logical_value, 1, "Active" ;
+  }
+  L_RLD_Val_Wdw_Opened {
+    physical_value, 0, 100, 1, 0, "%" ;
+    logical_value, 127, "Invalid" ;
+  }
+  L_RLD_Wdw_CenterSwitch {
+    physical_value, 0, 7, 1, 0, "bit" ;
+    logical_value, 0, "Inactive" ;
+    logical_value, 1, "Manual Up" ;
+    logical_value, 2, "Manual Down" ;
+    logical_value, 3, "Auto Up" ;
+    logical_value, 4, "Auto Down" ;
+    logical_value, 5, "Reserved" ;
+    logical_value, 6, "Reserved" ;
+    logical_value, 7, "Error" ;
+  }
+  L_RLD_Wdw_Init {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Window init incomplete" ;
+    logical_value, 1, "Window init complete" ;
+  }
+  L_RLD_Wdw_LocalSwitch {
+    physical_value, 0, 7, 1, 0, "bit" ;
+    logical_value, 0, "Inactive" ;
+    logical_value, 1, "Manual Up" ;
+    logical_value, 2, "Manual Down" ;
+    logical_value, 3, "Auto Up" ;
+    logical_value, 4, "Auto Down" ;
+    logical_value, 5, "Reserved" ;
+    logical_value, 6, "Reserved" ;
+    logical_value, 7, "Error" ;
+  }
+  L_RLD_Wdw_OD_Sts {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Non anti-pinch status" ;
+    logical_value, 1, "In Anti-pinch status" ;
+  }
+  L_RLD_Wdw_Obs_InhibitSts {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Not Obs Inhibit status" ;
+    logical_value, 1, "Obs Inhibit status" ;
+  }
+  L_RLD_Wdw_PositionSts {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "Middle position" ;
+    logical_value, 1, "Complete Open" ;
+    logical_value, 2, "Complete Close" ;
+    logical_value, 3, "Invalid" ;
+  }
+  L_RLD_Wdw_Running_Sts {
+    physical_value, 0, 7, 1, 0, "bit" ;
+    logical_value, 0, "Window stop" ;
+    logical_value, 1, "Manual Up" ;
+    logical_value, 2, "Manual Down" ;
+    logical_value, 3, "Auto Up" ;
+    logical_value, 4, "Auto Down" ;
+  }
+  L_RLOverVoltage {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "OverVoltage" ;
+  }
+  L_RLS_ModeEnable {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "No Request" ;
+    logical_value, 1, "OFF Request" ;
+    logical_value, 2, "ON Request" ;
+    logical_value, 3, "Reserved" ;
+  }
+  L_RLS_ModeSts {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "OFF" ;
+    logical_value, 1, "ON" ;
+  }
+  L_RLUnderVoltage {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "UnderVoltage" ;
+  }
+  L_RRD_ControlCommand {
+    physical_value, 0, 100, 1, 0, "%" ;
+    logical_value, 127, "No Request" ;
+  }
+  L_RRD_SHALL_Error {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "Error" ;
+  }
+  L_RRD_SMotor_Relay_Error {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "Error" ;
+  }
+  L_RRD_SOverHeat_Protect {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Inactive" ;
+    logical_value, 1, "Active" ;
+  }
+  L_RRD_Val_Wdw_Opened {
+    physical_value, 0, 100, 1, 0, "%" ;
+    logical_value, 127, "Invalid" ;
+  }
+  L_RRD_Wdw_CenterSwitch {
+    physical_value, 0, 7, 1, 0, "bit" ;
+    logical_value, 0, "Inactive" ;
+    logical_value, 1, "Manual Up" ;
+    logical_value, 2, "Manual Down" ;
+    logical_value, 3, "Auto Up" ;
+    logical_value, 4, "Auto Down" ;
+    logical_value, 5, "Reserved" ;
+    logical_value, 6, "Reserved" ;
+    logical_value, 7, "Error" ;
+  }
+  L_RRD_Wdw_Init {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Window init incomplete" ;
+    logical_value, 1, "Window init complete" ;
+  }
+  L_RRD_Wdw_LocalSwitch {
+    physical_value, 0, 7, 1, 0, "bit" ;
+    logical_value, 0, "Inactive" ;
+    logical_value, 1, "Manual Up" ;
+    logical_value, 2, "Manual Down" ;
+    logical_value, 3, "Auto Up" ;
+    logical_value, 4, "Auto Down" ;
+    logical_value, 5, "Reserved" ;
+    logical_value, 6, "Reserved" ;
+    logical_value, 7, "Error" ;
+  }
+  L_RRD_Wdw_OD_Sts {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Non anti-pinch status" ;
+    logical_value, 1, "In Anti-pinch status" ;
+  }
+  L_RRD_Wdw_Obs_InhibitSts {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Not Obs Inhibit status" ;
+    logical_value, 1, "Obs Inhibit status" ;
+  }
+  L_RRD_Wdw_PositionSts {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "Middle position" ;
+    logical_value, 1, "Complete Open" ;
+    logical_value, 2, "Complete Close" ;
+    logical_value, 3, "Invalid" ;
+  }
+  L_RRD_Wdw_Running_Sts {
+    physical_value, 0, 7, 1, 0, "bit" ;
+    logical_value, 0, "Window stop" ;
+    logical_value, 1, "Manual Up" ;
+    logical_value, 2, "Manual Down" ;
+    logical_value, 3, "Auto Up" ;
+    logical_value, 4, "Auto Down" ;
+  }
+  L_RROverVoltage {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "OverVoltage" ;
+  }
+  L_RRUnderVoltage {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "UnderVoltage" ;
+  }
+  L_RS_RainSensorError {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Rain Sensor Normal" ;
+    logical_value, 1, "Rain Sensor Error" ;
+  }
+  L_RS_RainfallLevel {
+    physical_value, 0, 3, 1, 0, "bit" ;
+  }
+  L_RS_SolarSensorError {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Light sensor normal" ;
+    logical_value, 1, "Light sensor error" ;
+  }
+  L_RS_WiperAutoSpReq {
+    physical_value, 0, 15, 1, 0, "bit" ;
+    logical_value, 0, "OFF" ;
+    logical_value, 1, "Low speed" ;
+    logical_value, 2, "High speed" ;
+    logical_value, 15, "Invalid" ;
+  }
+  L_Rain_Sensitivity {
+    physical_value, 0, 15, 1, 0, "bit" ;
+    logical_value, 0, "Sensitivity 0" ;
+    logical_value, 1, "Sensitivity 1" ;
+    logical_value, 2, "Sensitivity 2" ;
+    logical_value, 3, "Sensitivity 3" ;
+    logical_value, 4, "Sensitivity 4" ;
+    logical_value, 5, "Sensitivity 5" ;
+    logical_value, 6, "Sensitivity 6" ;
+    logical_value, 7, "Sensitivity 7" ;
+    logical_value, 15, "Invalid" ;
+  }
+  L_Screen_Type_Reserved {
+    physical_value, 0, 7, 1, 0, "bit" ;
+    logical_value, 0, "Green glass windscreen" ;
+    logical_value, 1, "Clear glass windscreen" ;
+    logical_value, 2, "Windscreen 2" ;
+    logical_value, 3, "Windscreen 3" ;
+    logical_value, 4, "Reserved" ;
+    logical_value, 5, "Reserved" ;
+    logical_value, 6, "Reserved" ;
+    logical_value, 7, "Invalid" ;
+  }
+  L_Signal_Error {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "All right" ;
+    logical_value, 1, "Defective" ;
+    logical_value, 2, "Reserved" ;
+    logical_value, 3, "Invalid" ;
+  }
+  L_Status_Light_Sens {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "All right" ;
+    logical_value, 1, "Defective" ;
+    logical_value, 2, "Reserved" ;
+    logical_value, 3, "Invalid" ;
+  }
+  L_Status_Rain_Sens {
+    physical_value, 0, 15, 1, 0, "bit" ;
+    logical_value, 0, "Normal wiping run" ;
+    logical_value, 1, "Gush of water - immediately take over wiper speed" ;
+    logical_value, 2, "Reserved" ;
+    logical_value, 3, "Reserved" ;
+    logical_value, 4, "Rain sensor all right" ;
+    logical_value, 5, "Rain sensor in fail-safe mode" ;
+    logical_value, 15, "invalid signal" ;
+  }
+  L_Steer_Whl_Type_Reserved {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "Left-hand drive" ;
+    logical_value, 1, "Right-hand drive" ;
+    logical_value, 2, "Reserved" ;
+    logical_value, 3, "Invalid" ;
+  }
+  L_Sunroof_Win_CloseReq {
+    physical_value, 0, 3, 1, 0, "bit" ;
+    logical_value, 0, "No request" ;
+    logical_value, 1, "Close request as rain happen" ;
+    logical_value, 2, "Close request as time expire" ;
+    logical_value, 3, "Reserved" ;
+  }
+  L_Value_Solar_Left_Sens {
+    physical_value, 0, 254, 4.01575, 0, "W/m2" ;
+    logical_value, 255, "Invalid" ;
+  }
+  L_Value_Solar_Right_Sens {
+    physical_value, 0, 254, 4.01575, 0, "W/m2" ;
+    logical_value, 255, "Invalid" ;
+  }
+  L_Window_Temp {
+    physical_value, 0, 1396, 0.1, -39.6, "?" ;
+  }
+  PDAPWL_01_LIN_Response_Error {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "Error" ;
+  }
+  RLAPWL_01_LIN_Response_Error {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "Error" ;
+  }
+  RRAPWL_01_LIN_Response_Error {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "Error" ;
+  }
+  RS_Sensor_01_LIN_Response_Error {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Normal" ;
+    logical_value, 1, "Error" ;
+  }
+  L_BCM_Window_StopCommand_Encoding {
+    physical_value, 0, 1, 1, 0, "bit" ;
+    logical_value, 0, "Default" ;
+    logical_value, 1, "Stop Command" ;
+  }
+}
+
+Signal_representation {
+  DDAPWL_01_LIN_Response_Error: DDAPWL_01_LIN_Response_Error ;
+  L_All_Wdw_Closed: L_All_Wdw_Closed ;
+  L_BCM_ChildLockSt: L_BCM_ChildLockSt ;
+  L_BCM_GlobalClose: L_BCM_GlobalClose ;
+  L_BCM_GlobalOpen: L_BCM_GlobalOpen ;
+  L_BCM_LockCommand: L_BCM_LockCommand ;
+  L_BCM_OutdoorTemp: L_BCM_OutdoorTemp ;
+  L_BCM_RS_HighSpOutput: L_BCM_RS_HighSpOutput ;
+  L_BCM_RS_LowSpOutput: L_BCM_RS_LowSpOutput ;
+  L_BCM_RS_ManWaInfo: L_BCM_RS_ManWaInfo ;
+  L_BCM_RS_RainSwSts: L_BCM_RS_RainSwSts ;
+  L_BCM_RS_WiperHPInfo: L_BCM_RS_WiperHPInfo ;
+  L_BCM_VehicleSpeed: L_BCM_VehicleSpeed ;
+  L_BCM_VehicleType_Reserved: L_BCM_VehicleType_Reserved ;
+  L_BCM_WdwEnable: L_BCM_WdwEnable ;
+  L_BCM_Window_StopCommand_Encoding: L_BCM_Window_StopCommand ;
+  L_DP_Temp: L_DP_Temp ;
+  L_Drv_ControlCommand: L_Drv_ControlCommand ;
+  L_Drv_HALL_Error: L_Drv_HALL_Error ;
+  L_Drv_Motor_Relay_Error: L_Drv_Motor_Relay_Error ;
+  L_Drv_OverHeat_Protect: L_Drv_OverHeat_Protect ;
+  L_Drv_OverVoltage: L_Drv_OverVoltage ;
+  L_Drv_UnderVoltage: L_Drv_UnderVoltage ;
+  L_Drv_Val_Wdw_Opened: L_Drv_Val_Wdw_Opened ;
+  L_Drv_Wdw_CenterSwitch: L_Drv_Wdw_CenterSwitch ;
+  L_Drv_Wdw_Init: L_Drv_Wdw_Init ;
+  L_Drv_Wdw_OD_Sts: L_Drv_Wdw_OD_Sts ;
+  L_Drv_Wdw_Obs_InhibitSts: L_Drv_Wdw_Obs_InhibitSts ;
+  L_Drv_Wdw_PositionSts: L_Drv_Wdw_PositionSts ;
+  L_Drv_Wdw_Running_Sts: L_Drv_Wdw_Running_Sts ;
+  L_EMS_EngStatus: L_EMS_EngStatus ;
+  L_Err_State_Cal_RS_Reserved: L_Err_State_Cal_RS_Reserved ;
+  L_Err_State_Coding: L_Err_State_Coding ;
+  L_Err_State_Humidity_Sens: L_Err_State_Humidity_Sens ;
+  L_Err_State_Light_Sens: L_Err_State_Light_Sens ;
+  L_Err_State_Over_Temp: L_Err_State_Over_Temp ;
+  L_Err_State_Over_Volt: L_Err_State_Over_Volt ;
+  L_Light_HudBrightnessUnit: L_Light_HudBrightnessUnit ;
+  L_Light_HudBrightnessValue: L_Light_HudBrightnessValue ;
+  L_Light_Switch_Reason: L_Light_Switch_Reason ;
+  L_Light_Switch_Request: L_Light_Switch_Request ;
+  L_PEPS_PowerMode: L_PEPS_PowerMode ;
+  L_PEPS_PowerModeValidity: L_PEPS_PowerModeValidity ;
+  L_Pas_ControlCommand: L_Pas_ControlCommand ;
+  L_Pas_HALL_Error: L_Pas_HALL_Error ;
+  L_Pas_Motor_Relay_Error: L_Pas_Motor_Relay_Error ;
+  L_Pas_OverHeat_Protect: L_Pas_OverHeat_Protect ;
+  L_Pas_OverVoltage: L_Pas_OverVoltage ;
+  L_Pas_UnderVoltage: L_Pas_UnderVoltage ;
+  L_Pas_Val_Wdw_Opened: L_Pas_Val_Wdw_Opened ;
+  L_Pas_Wdw_CenterSwitch: L_Pas_Wdw_CenterSwitch ;
+  L_Pas_Wdw_Init: L_Pas_Wdw_Init ;
+  L_Pas_Wdw_LocalSwitch: L_Pas_Wdw_LocalSwitch ;
+  L_Pas_Wdw_OD_Sts: L_Pas_Wdw_OD_Sts ;
+  L_Pas_Wdw_Obs_InhibitSts: L_Pas_Wdw_Obs_InhibitSts ;
+  L_Pas_Wdw_PositionSts: L_Pas_Wdw_PositionSts ;
+  L_Pas_Wdw_Running_Sts: L_Pas_Wdw_Running_Sts ;
+  L_RH_Sens: L_RH_Sens ;
+  L_RLD_ControlCommand: L_RLD_ControlCommand ;
+  L_RLD_HALL_Error: L_RLD_HALL_Error ;
+  L_RLD_Motor_Relay_Error: L_RLD_Motor_Relay_Error ;
+  L_RLD_OverHeat_Protect: L_RLD_OverHeat_Protect ;
+  L_RLD_Val_Wdw_Opened: L_RLD_Val_Wdw_Opened ;
+  L_RLD_Wdw_CenterSwitch: L_RLD_Wdw_CenterSwitch ;
+  L_RLD_Wdw_Init: L_RLD_Wdw_Init ;
+  L_RLD_Wdw_LocalSwitch: L_RLD_Wdw_LocalSwitch ;
+  L_RLD_Wdw_OD_Sts: L_RLD_Wdw_OD_Sts ;
+  L_RLD_Wdw_Obs_InhibitSts: L_RLD_Wdw_Obs_InhibitSts ;
+  L_RLD_Wdw_PositionSts: L_RLD_Wdw_PositionSts ;
+  L_RLD_Wdw_Running_Sts: L_RLD_Wdw_Running_Sts ;
+  L_RLOverVoltage: L_RLOverVoltage ;
+  L_RLS_ModeEnable: L_RLS_ModeEnable ;
+  L_RLS_ModeSts: L_RLS_ModeSts ;
+  L_RLUnderVoltage: L_RLUnderVoltage ;
+  L_RRD_ControlCommand: L_RRD_ControlCommand ;
+  L_RRD_SHALL_Error: L_RRD_SHALL_Error ;
+  L_RRD_SMotor_Relay_Error: L_RRD_SMotor_Relay_Error ;
+  L_RRD_SOverHeat_Protect: L_RRD_SOverHeat_Protect ;
+  L_RRD_Val_Wdw_Opened: L_RRD_Val_Wdw_Opened ;
+  L_RRD_Wdw_CenterSwitch: L_RRD_Wdw_CenterSwitch ;
+  L_RRD_Wdw_Init: L_RRD_Wdw_Init ;
+  L_RRD_Wdw_LocalSwitch: L_RRD_Wdw_LocalSwitch ;
+  L_RRD_Wdw_OD_Sts: L_RRD_Wdw_OD_Sts ;
+  L_RRD_Wdw_Obs_InhibitSts: L_RRD_Wdw_Obs_InhibitSts ;
+  L_RRD_Wdw_PositionSts: L_RRD_Wdw_PositionSts ;
+  L_RRD_Wdw_Running_Sts: L_RRD_Wdw_Running_Sts ;
+  L_RROverVoltage: L_RROverVoltage ;
+  L_RRUnderVoltage: L_RRUnderVoltage ;
+  L_RS_RainSensorError: L_RS_RainSensorError ;
+  L_RS_RainfallLevel: L_RS_RainfallLevel ;
+  L_RS_SolarSensorError: L_RS_SolarSensorError ;
+  L_RS_WiperAutoSpReq: L_RS_WiperAutoSpReq ;
+  L_Rain_Sensitivity: L_Rain_Sensitivity ;
+  L_Screen_Type_Reserved: L_Screen_Type_Reserved ;
+  L_Signal_Error: L_Signal_Error ;
+  L_Status_Light_Sens: L_Status_Light_Sens ;
+  L_Status_Rain_Sens: L_Status_Rain_Sens ;
+  L_Steer_Whl_Type_Reserved: L_Steer_Whl_Type_Reserved ;
+  L_Sunroof_Win_CloseReq: L_Sunroof_Win_CloseReq ;
+  L_Value_Solar_Left_Sens: L_Value_Solar_Left_Sens ;
+  L_Value_Solar_Right_Sens: L_Value_Solar_Right_Sens ;
+  L_Window_Temp: L_Window_Temp ;
+  PDAPWL_01_LIN_Response_Error: PDAPWL_01_LIN_Response_Error ;
+  RLAPWL_01_LIN_Response_Error: RLAPWL_01_LIN_Response_Error ;
+  RRAPWL_01_LIN_Response_Error: RRAPWL_01_LIN_Response_Error ;
+  RS_Sensor_01_LIN_Response_Error: RS_Sensor_01_LIN_Response_Error ;
+}

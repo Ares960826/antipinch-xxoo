@@ -1,0 +1,441 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                    Mentor Graphics Corporation                             */
+/*                        All rights reserved                                 */
+/*                                                                            */
+/* ************************************************************************** */
+/*                                                                            */
+/*  Description:   LIN Description file                                       */
+/*  Project:       PlatformConfig                                             */
+/*  Release:       PlatformConfi_V02                                          */
+/*  Configuration: base2                                                      */
+/*  Network:       BCM_LIN2                                                   */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
+LIN_description_file;
+LIN_protocol_version = "2.1";
+LIN_language_version = "2.1";
+LIN_speed =   19.200 kbps;
+Channel_name = "L2";
+
+Nodes {
+	Master : Body_Controller,    5.000 ms,    0.250 ms;
+	Slaves: PDC_Front, Power_Window_Lifter3, Power_Window_Lifter4;
+}
+
+Signals {
+	BCMPDCSnsrsNum_lL2: 2, 3, Body_Controller, PDC_Front;
+	BCMPDCSysEnbReqV_lL2: 1, 0, Body_Controller, PDC_Front;
+	BCMPDCSysEnbReq_lL2: 1, 0, Body_Controller, PDC_Front;
+	BCMSysPwrMd_lL2: 2, 0, Body_Controller, Power_Window_Lifter3, Power_Window_Lifter4;
+	PDCCofignSts_l: 3, 1, PDC_Front, Body_Controller;
+	PDCOverVolFlt_l: 1, 0, PDC_Front, Body_Controller;
+	PDCRespEr_l: 1, 0, PDC_Front, Body_Controller;
+	PDCRLSnsrFlt_l: 1, 0, PDC_Front, Body_Controller;
+	PDCRrMidLSnsrFlt_l: 1, 0, PDC_Front, Body_Controller;
+	PDCRrMidRSnsrFlt_l: 1, 0, PDC_Front, Body_Controller;
+	PDCRRSnsrFlt_l: 1, 0, PDC_Front, Body_Controller;
+	PDCSysSts_l: 4, 3, PDC_Front, Body_Controller;
+	PDCUnderVolFlt_l: 1, 0, PDC_Front, Body_Controller;
+	PWL3RespEr_l: 1, 0, Power_Window_Lifter3, Body_Controller;
+	PWL4RespEr_l: 1, 0, Power_Window_Lifter4, Body_Controller;
+	RLObsRng_l: 4, 0, PDC_Front, Body_Controller;
+	RLPWLHiEftCndA_l: 1, 0, Power_Window_Lifter3, Body_Controller;
+	RLPWLNotNormd_l: 1, 1, Power_Window_Lifter3, Body_Controller;
+	RLPWLOpEnb_l: 1, 0, Body_Controller, Power_Window_Lifter3;
+	RLPWLRelayFltDetc_l: 1, 0, Power_Window_Lifter3, Body_Controller;
+	RLPWLRevsng_l: 1, 0, Power_Window_Lifter3, Body_Controller;
+	RLPWLSnsngSysFltDetc_l: 1, 0, Power_Window_Lifter3, Body_Controller;
+	RLPWLThrmlProtnA_l: 1, 0, Power_Window_Lifter3, Body_Controller;
+	RLWndDclnSpc_l: 8, 255, Power_Window_Lifter3, Body_Controller;
+	RLWndLclSwDsbld_l: 1, 0, Body_Controller, Power_Window_Lifter3;
+	RLWndLclSwSts_l: 3, 0, Power_Window_Lifter3, Body_Controller;
+	RLWndOpReq_l: 3, 0, Body_Controller, Power_Window_Lifter3;
+	RLWndShrtMvReq_l: 2, 0, Body_Controller, Power_Window_Lifter3;
+	RrMidLObsRng_l: 4, 0, PDC_Front, Body_Controller;
+	RrMidRObsRng_l: 4, 0, PDC_Front, Body_Controller;
+	RrObsDist_l: 8, 0, PDC_Front, Body_Controller;
+	RRObsRng_l: 4, 0, PDC_Front, Body_Controller;
+	RrPDCAudWrnng_l: 4, 0, PDC_Front, Body_Controller;
+	RRPWLHiEftCndA_l: 1, 0, Power_Window_Lifter4, Body_Controller;
+	RRPWLNotNormd_l: 1, 1, Power_Window_Lifter4, Body_Controller;
+	RRPWLOpEnb_l: 1, 0, Body_Controller, Power_Window_Lifter4;
+	RRPWLRelayFltDetc_l: 1, 0, Power_Window_Lifter4, Body_Controller;
+	RRPWLRevsng_l: 1, 0, Power_Window_Lifter4, Body_Controller;
+	RRPWLSnsngSysFltDetc_l: 1, 0, Power_Window_Lifter4, Body_Controller;
+	RRPWLThrmlProtnA_l: 1, 0, Power_Window_Lifter4, Body_Controller;
+	RRWndDclnSpc_l: 8, 255, Power_Window_Lifter4, Body_Controller;
+	RRWndLclSwDsbld_l: 1, 0, Body_Controller, Power_Window_Lifter4;
+	RRWndLclSwSts_l: 3, 0, Power_Window_Lifter4, Body_Controller;
+	RRWndOpReq_l: 3, 0, Body_Controller, Power_Window_Lifter4;
+	RRWndShrtMvReq_l: 2, 0, Body_Controller, Power_Window_Lifter4;
+}
+
+Diagnostic_signals {
+	MasterReqB0:8,0;
+	MasterReqB1:8,0;
+	MasterReqB2:8,0;
+	MasterReqB3:8,0;
+	MasterReqB4:8,0;
+	MasterReqB5:8,0;
+	MasterReqB6:8,0;
+	MasterReqB7:8,0;
+	SlaveRespB0:8,0;
+	SlaveRespB1:8,0;
+	SlaveRespB2:8,0;
+	SlaveRespB3:8,0;
+	SlaveRespB4:8,0;
+	SlaveRespB5:8,0;
+	SlaveRespB6:8,0;
+	SlaveRespB7:8,0;
+}
+Frames {
+	BCM_LIN2_FrP00 : 22, Body_Controller, 8	{
+		RLWndShrtMvReq_l, 3;
+		RRPWLOpEnb_l, 5;
+		RRWndOpReq_l, 40;
+		RRWndLclSwDsbld_l, 43;
+		RLWndLclSwDsbld_l, 44;
+		RRWndShrtMvReq_l, 46;
+		RLPWLOpEnb_l, 48;
+		RLWndOpReq_l, 49;
+		BCMSysPwrMd_lL2, 61;
+	}
+	BCM_LIN2_FrP01 : 53, Body_Controller, 8	{
+		BCMPDCSnsrsNum_lL2, 28;
+		BCMPDCSysEnbReq_lL2, 30;
+		BCMPDCSysEnbReqV_lL2, 31;
+	}
+	PDC_LIN2_FrP00 : 27, PDC_Front, 8	{
+		PDCRRSnsrFlt_l, 0;
+		PDCRLSnsrFlt_l, 1;
+		PDCRrMidLSnsrFlt_l, 2;
+		PDCRrMidRSnsrFlt_l, 3;
+		PDCOverVolFlt_l, 4;
+		PDCUnderVolFlt_l, 5;
+		RLObsRng_l, 16;
+		RRObsRng_l, 20;
+		RrMidLObsRng_l, 24;
+		RrMidRObsRng_l, 28;
+		RrObsDist_l, 40;
+		RrPDCAudWrnng_l, 52;
+		PDCSysSts_l, 56;
+		PDCCofignSts_l, 60;
+		PDCRespEr_l, 63;
+	}
+	PWL3_LIN2_FrP00 : 23, Power_Window_Lifter3, 8	{
+		PWL3RespEr_l, 46;
+		RLPWLNotNormd_l, 47;
+		RLPWLHiEftCndA_l, 48;
+		RLPWLRevsng_l, 49;
+		RLPWLSnsngSysFltDetc_l, 50;
+		RLPWLThrmlProtnA_l, 51;
+		RLPWLRelayFltDetc_l, 52;
+		RLWndLclSwSts_l, 53;
+		RLWndDclnSpc_l, 56;
+	}
+	PWL4_LIN2_FrP00 : 24, Power_Window_Lifter4, 8	{
+		PWL4RespEr_l, 46;
+		RRPWLNotNormd_l, 47;
+		RRPWLHiEftCndA_l, 48;
+		RRPWLRevsng_l, 49;
+		RRPWLSnsngSysFltDetc_l, 50;
+		RRPWLThrmlProtnA_l, 51;
+		RRPWLRelayFltDetc_l, 52;
+		RRWndLclSwSts_l, 53;
+		RRWndDclnSpc_l, 56;
+	}
+}
+
+Diagnostic_frames	{
+	MasterReq: 60	{	//pub: Master
+		MasterReqB0, 0;
+		MasterReqB1, 8;
+		MasterReqB2, 16;
+		MasterReqB3, 24;
+		MasterReqB4, 32;
+		MasterReqB5, 40;
+		MasterReqB6, 48;
+		MasterReqB7, 56;
+		}
+	SlaveResp: 61	{	//pub: any slave
+		SlaveRespB0, 0;
+		SlaveRespB1, 8;
+		SlaveRespB2, 16;
+		SlaveRespB3, 24;
+		SlaveRespB4, 32;
+		SlaveRespB5, 40;
+		SlaveRespB6, 48;
+		SlaveRespB7, 56;
+		}
+	}
+
+Node_attributes{
+	PDC_Front {
+		LIN_protocol = "2.1";
+		configured_NAD = 0x16;
+		initial_NAD = 0x16;
+		product_id = 0x0770, 0xFFF0;
+		response_error = PDCRespEr_l;
+		P2_min = 50.000 ms;
+		ST_min = 20.000 ms;
+		configurable_frames {
+			BCM_LIN2_FrP01;
+			PDC_LIN2_FrP00;
+		}
+	}
+	Power_Window_Lifter3 {
+		LIN_protocol = "2.1";
+		configured_NAD = 0x04;
+		initial_NAD = 0x04;
+		product_id = 0x0005, 0x0000;
+		response_error = PWL3RespEr_l;
+		P2_min = 50.000 ms;
+		ST_min = 20.000 ms;
+		configurable_frames {
+			BCM_LIN2_FrP00;
+			PWL3_LIN2_FrP00;
+		}
+	}
+	Power_Window_Lifter4 {
+		LIN_protocol = "2.1";
+		configured_NAD = 0x05;
+		initial_NAD = 0x05;
+		product_id = 0x0005, 0x0000;
+		response_error = PWL4RespEr_l;
+		P2_min = 50.000 ms;
+		ST_min = 20.000 ms;
+		configurable_frames {
+			BCM_LIN2_FrP00;
+			PWL4_LIN2_FrP00;
+		}
+	}
+}
+Schedule_tables {
+/*	FM_Diagnostics_L2 {
+		MasterReq	delay   50.000 ms;
+		SlaveResp	delay   10.000 ms;
+	}*/
+	FM_Normal_L2 {
+		BCM_LIN2_FrP01	delay   10.000 ms;
+		BCM_LIN2_FrP00	delay   10.000 ms;
+		PWL3_LIN2_FrP00	delay   10.000 ms;
+		PWL4_LIN2_FrP00	delay   20.000 ms;
+		BCM_LIN2_FrP01	delay   10.000 ms;
+		BCM_LIN2_FrP00	delay   10.000 ms;
+		PWL3_LIN2_FrP00	delay   10.000 ms;
+		PWL4_LIN2_FrP00	delay   10.000 ms;
+		PDC_LIN2_FrP00	delay   10.000 ms;
+	}
+}
+
+Signal_encoding_types {
+	BooleanET {
+		logical_value, 1, "True";
+		logical_value, 0, "False";
+	}
+	BooleanCoding {
+		logical_value, 1, "True";
+		logical_value, 0, "False";
+	}
+	PDCCofignStsET {
+		logical_value, 0, "3 rear sensors";
+		logical_value, 1, "4 rear sensors";
+		logical_value, 2, "4 rear sensors and 2 front side sensors";
+		logical_value, 3, "4 rear sensors and 4 front sensors";
+		logical_value, 4, "2 rear sensors";
+		logical_value, 5, "Reserved";
+		logical_value, 6, "Reserved";
+		logical_value, 7, "Reserved";
+	}
+	PDCSnsrsNumET {
+		logical_value, 0, "1 sensor";
+		logical_value, 1, "2 sensor";
+		logical_value, 2, "3 sensor";
+		logical_value, 3, "4 sensor";
+	}
+	PDCSysEnbReqET {
+		logical_value, 0, "Disable request";
+		logical_value, 1, "Enable request";
+	}
+	PDCSysStsET {
+		logical_value, 0, "System OK";
+		logical_value, 1, "System initialization sucessful";
+		logical_value, 2, "System Failed";
+		logical_value, 3, "System Disabled";
+		logical_value, 4, "Front PDC Disabled";
+		logical_value, 5, "Front PDC Failed";
+		logical_value, 6, "Rear PDC Failed";
+		logical_value, 7, "Rear PDC Disabled";
+	}
+	RLObsRngET {
+		logical_value, 0, "No Obstacle";
+		logical_value, 1, "Range 1";
+		logical_value, 2, "Range 2";
+		logical_value, 3, "Range 3";
+		logical_value, 4, "Range 4";
+		logical_value, 5, "Range 5";
+		logical_value, 6, "Range 6";
+		logical_value, 7, "Range 7";
+		logical_value, 8, "Range 8";
+		logical_value, 9, "Range 9";
+		logical_value, 10, "Range 10";
+		logical_value, 11, "Range 11";
+		logical_value, 12, "Range 12";
+		logical_value, 13, "Range 13";
+		logical_value, 14, "Range 14";
+		logical_value, 15, "Range 15";
+	}
+	RLWndDclnSpcET {
+		physical_value, 0, 200, 0.5, 0, "%";
+		logical_value, 255, "not initialized";
+		physical_value, 201, 204, 1, 0, "fault";
+	}
+	RrMidLObsRngET {
+		logical_value, 0, "No Obstacle";
+		logical_value, 1, "Range 1";
+		logical_value, 2, "Range 2";
+		logical_value, 3, "Range 3";
+		logical_value, 4, "Range 4";
+		logical_value, 5, "Range 5";
+		logical_value, 6, "Range 6";
+		logical_value, 7, "Range 7";
+		logical_value, 8, "Range 8";
+		logical_value, 9, "Range 9";
+		logical_value, 10, "Range 10";
+		logical_value, 11, "Range 11";
+		logical_value, 12, "Range 12";
+		logical_value, 13, "Range 13";
+		logical_value, 14, "Range 14";
+		logical_value, 15, "Range 15";
+	}
+	RrMidRObsRngET {
+		logical_value, 0, "No Obstacle";
+		logical_value, 1, "Range 1";
+		logical_value, 2, "Range 2";
+		logical_value, 3, "Range 3";
+		logical_value, 4, "Range 4";
+		logical_value, 5, "Range 5";
+		logical_value, 6, "Range 6";
+		logical_value, 7, "Range 7";
+		logical_value, 8, "Range 8";
+		logical_value, 9, "Range 9";
+		logical_value, 10, "Range 10";
+		logical_value, 11, "Range 11";
+		logical_value, 12, "Range 12";
+		logical_value, 13, "Range 13";
+		logical_value, 14, "Range 14";
+		logical_value, 15, "Range 15";
+	}
+	RrObsDistET {
+		physical_value, 0, 255, 1, 0, "";
+	}
+	RRObsRngET {
+		logical_value, 0, "No Obstacle";
+		logical_value, 1, "Range 1";
+		logical_value, 2, "Range 2";
+		logical_value, 3, "Range 3";
+		logical_value, 4, "Range 4";
+		logical_value, 5, "Range 5";
+		logical_value, 6, "Range 6";
+		logical_value, 7, "Range 7";
+		logical_value, 8, "Range 8";
+		logical_value, 9, "Range 9";
+		logical_value, 10, "Range 10";
+		logical_value, 11, "Range 11";
+		logical_value, 12, "Range 12";
+		logical_value, 13, "Range 13";
+		logical_value, 14, "Range 14";
+		logical_value, 15, "Range 15";
+	}
+	RrPDCAudWrnngET {
+		logical_value, 0, "No Obstacle";
+		logical_value, 1, "Range 1";
+		logical_value, 2, "Range 2";
+		logical_value, 3, "Range 3";
+		logical_value, 4, "Range 4";
+		logical_value, 5, "Range 5";
+		logical_value, 6, "Range 6";
+		logical_value, 7, "Range 7";
+		logical_value, 8, "Range 8";
+		logical_value, 9, "Range 9";
+		logical_value, 10, "Range 10";
+		logical_value, 11, "Range 11";
+		logical_value, 12, "Range 12";
+		logical_value, 13, "Range 13";
+		logical_value, 14, "Range 14";
+		logical_value, 15, "Range 15";
+	}
+	RRWndDclnSpcET {
+		physical_value, 0, 200, 0.5, 0, "%";
+		logical_value, 255, "not initialized";
+		physical_value, 201, 204, 1, 0, "fault";
+	}
+	SysPwrMd {
+		logical_value, 0, "Off";
+		logical_value, 1, "ACC";
+		logical_value, 2, "Run";
+		logical_value, 3, "Crank Request";
+	}
+	ValidityCoding {
+		logical_value, 0, "Valid";
+		logical_value, 1, "Invalid";
+	}
+	WndOpReqET {
+		logical_value, 0, "no request";
+		logical_value, 1, "up request";
+		logical_value, 2, "down request";
+		logical_value, 3, "auto up request";
+		logical_value, 4, "auto down request";
+		logical_value, 5, "reserved";
+		logical_value, 6, "reserved";
+		logical_value, 7, "reserved";
+	}
+	WndShrtMvReqET {
+		logical_value, 0, "no request";
+		logical_value, 1, "short drop";
+		logical_value, 2, "short rise";
+		logical_value, 3, "Reserved";
+	}
+	WndSwStsET {
+		logical_value, 0, "no request";
+		logical_value, 1, "up request";
+		logical_value, 2, "down request";
+		logical_value, 3, "auto up request";
+		logical_value, 4, "auto down request";
+		logical_value, 5, "reserved";
+		logical_value, 6, "reserved";
+		logical_value, 7, "reserved";
+	}
+}
+
+Signal_representation {
+	BooleanET: PDCOverVolFlt_l, PDCRespEr_l, PDCRLSnsrFlt_l, PDCRrMidLSnsrFlt_l,
+		PDCRrMidRSnsrFlt_l, PDCRRSnsrFlt_l, PDCUnderVolFlt_l,
+		PWL3RespEr_l, PWL4RespEr_l, RLPWLHiEftCndA_l, RLPWLNotNormd_l,
+		RLPWLOpEnb_l, RLPWLRelayFltDetc_l, RLPWLRevsng_l, RLPWLSnsngSysFltDetc_l,
+		RLPWLThrmlProtnA_l, RLWndLclSwDsbld_l, RRPWLHiEftCndA_l,
+		RRPWLNotNormd_l, RRPWLOpEnb_l, RRPWLRelayFltDetc_l,
+		RRPWLRevsng_l, RRPWLSnsngSysFltDetc_l, RRPWLThrmlProtnA_l,
+		RRWndLclSwDsbld_l;
+	PDCCofignStsET: PDCCofignSts_l;
+	PDCSnsrsNumET: BCMPDCSnsrsNum_lL2;
+	PDCSysEnbReqET: BCMPDCSysEnbReq_lL2;
+	PDCSysStsET: PDCSysSts_l;
+	RLObsRngET: RLObsRng_l;
+	RLWndDclnSpcET: RLWndDclnSpc_l;
+	RrMidLObsRngET: RrMidLObsRng_l;
+	RrMidRObsRngET: RrMidRObsRng_l;
+	RrObsDistET: RrObsDist_l;
+	RRObsRngET: RRObsRng_l;
+	RrPDCAudWrnngET: RrPDCAudWrnng_l;
+	RRWndDclnSpcET: RRWndDclnSpc_l;
+	SysPwrMd: BCMSysPwrMd_lL2;
+	ValidityCoding: BCMPDCSysEnbReqV_lL2;
+	WndOpReqET: RLWndOpReq_l, RRWndOpReq_l;
+	WndShrtMvReqET: RLWndShrtMvReq_l, RRWndShrtMvReq_l;
+	WndSwStsET: RLWndLclSwSts_l, RRWndLclSwSts_l;
+}

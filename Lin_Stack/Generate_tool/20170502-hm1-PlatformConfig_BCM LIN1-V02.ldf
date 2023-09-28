@@ -1,0 +1,686 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                    Mentor Graphics Corporation                             */
+/*                        All rights reserved                                 */
+/*                                                                            */
+/* ************************************************************************** */
+/*                                                                            */
+/*  Description:   LIN Description file                                       */
+/*  Project:       PlatformConfig                                             */
+/*  Release:       PlatformConfi_V02                                          */
+/*  Configuration: base2                                                      */
+/*  Network:       BCM_LIN1                                                   */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
+LIN_description_file;
+LIN_protocol_version = "2.1";
+LIN_language_version = "2.1";
+LIN_speed =   19.200 kbps;
+Channel_name = "L1";
+
+Nodes {
+	Master : Body_Controller,    5.000 ms,    0.250 ms;
+	Slaves: Drivers_Door_Switch_Pack, Master_Light_Switch, PDC_Rear, Power_Window_Lifter1, Power_Window_Lifter2, UCS ;
+}
+
+Signals {
+	BCMFLSeatHeatLvl_l: 2, 0, Body_Controller, UCS;
+	BCMFRSeatHeatLvl_l: 2, 0, Body_Controller, UCS;
+	BCMOtsdMirFoldCmd_l: 2, 0, Body_Controller, Drivers_Door_Switch_Pack;
+	BCMPDCSnsrsNum_lL1: 2, 3, Body_Controller, PDC_Rear;
+	BCMPDCSysEnbReqV_lL1: 1, 0, Body_Controller, PDC_Rear;
+	BCMPDCSysEnbReq_lL1: 1, 0, Body_Controller, PDC_Rear;
+	BCMSysPwrMd_lL1: 2, 0, Body_Controller, Drivers_Door_Switch_Pack, Master_Light_Switch, Power_Window_Lifter1, Power_Window_Lifter2, UCS;
+	DDSPRespEr_l: 1, 0, Drivers_Door_Switch_Pack, Body_Controller;
+	DimLghtLvl_l: 8, 0, Body_Controller, Drivers_Door_Switch_Pack, Master_Light_Switch;
+	DipdBeamLghtOn_l: 1, 0, Body_Controller, Master_Light_Switch;
+	DrvrPWLHiEftCndA_l: 1, 0, Power_Window_Lifter1, Body_Controller;
+	DrvrPWLNotNormd_l: 1, 1, Power_Window_Lifter1, Body_Controller;
+	DrvrPWLOpEnb_l: 1, 0, Body_Controller, Drivers_Door_Switch_Pack, Power_Window_Lifter1;
+	DrvrPWLRelayFltDetc_l: 1, 0, Power_Window_Lifter1, Body_Controller;
+	DrvrPWLRevsng_l: 1, 0, Power_Window_Lifter1, Body_Controller;
+	DrvrPWLSnsngSysFltDetc_l: 1, 0, Power_Window_Lifter1, Body_Controller;
+	DrvrPWLThrmlProtnA_l: 1, 0, Power_Window_Lifter1, Body_Controller;
+	DrvrWndDclnSpc_l: 8, 255, Power_Window_Lifter1, Body_Controller;
+	DrvrWndLclSwDsbld_l: 1, 0, Body_Controller, Power_Window_Lifter1;
+	DrvrWndLclSwSts_l: 3, 0, Power_Window_Lifter1, Body_Controller;
+	DrvrWndOpReq_l: 3, 0, Body_Controller, Drivers_Door_Switch_Pack, Power_Window_Lifter1;
+	DrvrWndShrtMvReq_l: 2, 0, Body_Controller, Power_Window_Lifter1;
+	FLWndSwSts_l: 3, 0, Drivers_Door_Switch_Pack, Body_Controller;
+	FrtFogLghtOn_l: 1, 0, Body_Controller, Master_Light_Switch;
+	FrtPsngPWLHiEftCndA_l: 1, 0, Power_Window_Lifter2, Body_Controller;
+	FrtPsngPWLNotNormd_l: 1, 1, Power_Window_Lifter2, Body_Controller;
+	FrtPsngPWLOpEnb_l: 1, 0, Body_Controller, Power_Window_Lifter2;
+	FrtPsngPWLRelayFltDetc_l: 1, 0, Power_Window_Lifter2, Body_Controller;
+	FrtPsngPWLRevsng_l: 1, 0, Power_Window_Lifter2, Body_Controller;
+	FrtPsngPWLSnsngSysFltD_l: 1, 0, Power_Window_Lifter2, Body_Controller;
+	FrtPsngPWLThrmlProtnA_l: 1, 0, Power_Window_Lifter2, Body_Controller;
+	FrtPsngWndDclnSpc_l: 8, 255, Power_Window_Lifter2, Body_Controller;
+	FrtPsngWndLclSwDsbld_l: 1, 0, Body_Controller, Power_Window_Lifter2;
+	FrtPsngWndLclSwSts_l: 3, 0, Power_Window_Lifter2, Body_Controller;
+	FrtPsngWndOpReq_l: 3, 0, Body_Controller, Power_Window_Lifter2;
+	FrtPsngWndShrtMvReq_l: 2, 0, Body_Controller, Power_Window_Lifter2;
+	FRWndSwSts_l: 3, 0, Drivers_Door_Switch_Pack, Body_Controller;
+	LMirSeldSwA_l: 1, 0, Master_Light_Switch, Body_Controller;
+	MirDwnSwA_l: 1, 0, Master_Light_Switch, Body_Controller;
+	MirFoldSwA_l: 1, 0, Master_Light_Switch, Body_Controller, Drivers_Door_Switch_Pack;
+	MirLSwA_l: 1, 0, Master_Light_Switch, Body_Controller;
+	MirRSwA_l: 1, 0, Master_Light_Switch, Body_Controller;
+	MirUpSwA_l: 1, 0, Master_Light_Switch, Body_Controller;
+	MLSAutoLghtOn_l: 1, 0, Body_Controller, Master_Light_Switch;
+	MLSAutoPosSeld_l: 1, 0, Master_Light_Switch, Body_Controller;
+	MLSDimPos_l: 8, 0, Master_Light_Switch, Body_Controller;
+	MLSDipdBeamOnPosSeld_l: 1, 0, Master_Light_Switch, Body_Controller;
+	MLSFlt1Sts_l: 1, 0, Master_Light_Switch, Body_Controller;
+	MLSFlt2Sts_l: 1, 0, Master_Light_Switch, Body_Controller;
+	MLSFlt3Sts_l: 1, 0, Master_Light_Switch, Body_Controller;
+	MLSFlt4Sts_l: 1, 0, Master_Light_Switch, Body_Controller;
+	MLSFrtFogLampOnPosSeld_l: 1, 0, Master_Light_Switch, Body_Controller;
+	MLSRespEr_l: 1, 0, Master_Light_Switch, Body_Controller;
+	MLSRrFogLampOnPosSeld_l: 1, 0, Master_Light_Switch, Body_Controller;
+	MLSSideLampOnPosSeld_l: 1, 0, Master_Light_Switch, Body_Controller;
+	OtsdMirMmryCtrlOpTypC_l: 2, 0, Body_Controller, Drivers_Door_Switch_Pack;
+	OtsdMirMmryCtrlPosCmd_l: 3, 0, Body_Controller, Drivers_Door_Switch_Pack;
+	OtsdMirMmryCtrlPosStoC_l: 1, 0, Drivers_Door_Switch_Pack, Body_Controller;
+	PDCCofignSts_l: 3, 1, PDC_Rear, Body_Controller;
+	PDCOverVolFlt_l: 1, 0, PDC_Rear, Body_Controller;
+	PDCRespEr_l: 1, 0, PDC_Rear, Body_Controller;
+	PDCRLSnsrFlt_l: 1, 0, PDC_Rear, Body_Controller;
+	PDCRrMidLSnsrFlt_l: 1, 0, PDC_Rear, Body_Controller;
+	PDCRrMidRSnsrFlt_l: 1, 0, PDC_Rear, Body_Controller;
+	PDCRRSnsrFlt_l: 1, 0, PDC_Rear, Body_Controller;
+	PDCSysSts_l: 4, 3, PDC_Rear, Body_Controller;
+	PDCUnderVolFlt_l: 1, 0, PDC_Rear, Body_Controller;
+	PWL1RespEr_l: 1, 0, Power_Window_Lifter1, Body_Controller;
+	PWL2RespEr_l: 1, 0, Power_Window_Lifter2, Body_Controller;
+	RevsGearPosLOtsdMirADC_l: 1, 0, Body_Controller, Drivers_Door_Switch_Pack;
+	RevsGearPosROtsdMirADC_l: 1, 0, Body_Controller, Drivers_Door_Switch_Pack;
+	RLObsRng_l: 4, 0, PDC_Rear, Body_Controller;
+	RLWndSwSts_l: 3, 0, Drivers_Door_Switch_Pack, Body_Controller;
+	RMirSeldSwA_l: 1, 0, Master_Light_Switch, Body_Controller;
+	RrFogLghtOn_l: 1, 0, Body_Controller, Master_Light_Switch;
+	RrMidLObsRng_l: 4, 0, PDC_Rear, Body_Controller;
+	RrMidRObsRng_l: 4, 0, PDC_Rear, Body_Controller;
+	RrObsDist_l: 8, 0, PDC_Rear, Body_Controller;
+	RRObsRng_l: 4, 0, PDC_Rear, Body_Controller;
+	RrPDCAudWrnng_l: 4, 0, PDC_Rear, Body_Controller;
+	RrWndInhIndCmd_l: 2, 0, Body_Controller, Drivers_Door_Switch_Pack;
+	RrWndInhSwSts_l: 2, 0, Drivers_Door_Switch_Pack, Body_Controller;
+	RRWndSwSts_l: 3, 0, Drivers_Door_Switch_Pack, Body_Controller;
+	SideLghtOn_l: 1, 0, Body_Controller, Drivers_Door_Switch_Pack, Master_Light_Switch;
+	SysVolV_l: 1, 0, Body_Controller, Master_Light_Switch;
+	SysVol_l: 8, 0, Body_Controller, Master_Light_Switch;
+	UCSFLSeatHeatSwReq_l: 2, 0, UCS, Body_Controller;
+	UCSFRSeatHeatSwReq_l: 2, 0, UCS, Body_Controller;
+	UCSRespEr_l: 1, 0, UCS, Body_Controller;
+	VehSideLghtSts_l: 2, 0, Body_Controller, UCS;
+}
+
+Diagnostic_signals {
+	MasterReqB0:8,0;
+	MasterReqB1:8,0;
+	MasterReqB2:8,0;
+	MasterReqB3:8,0;
+	MasterReqB4:8,0;
+	MasterReqB5:8,0;
+	MasterReqB6:8,0;
+	MasterReqB7:8,0;
+	SlaveRespB0:8,0;
+	SlaveRespB1:8,0;
+	SlaveRespB2:8,0;
+	SlaveRespB3:8,0;
+	SlaveRespB4:8,0;
+	SlaveRespB5:8,0;
+	SlaveRespB6:8,0;
+	SlaveRespB7:8,0;
+}
+Frames {
+	BCM_LIN1_FrP00 : 53, Body_Controller, 8	{
+		FrtFogLghtOn_l, 0;
+		DipdBeamLghtOn_l, 1;
+		MLSAutoLghtOn_l, 2;
+		DrvrWndShrtMvReq_l, 3;
+		FrtPsngPWLOpEnb_l, 5;
+		SysVolV_l, 6;
+		SideLghtOn_l, 7;
+		SysVol_l, 8;
+		DimLghtLvl_l, 16;
+		BCMFLSeatHeatLvl_l, 24;
+		BCMFRSeatHeatLvl_l, 26;
+		BCMPDCSnsrsNum_lL1, 28;
+		BCMPDCSysEnbReq_lL1, 30;
+		BCMPDCSysEnbReqV_lL1, 31;
+		OtsdMirMmryCtrlPosCmd_l, 32;
+		OtsdMirMmryCtrlOpTypC_l, 35;
+		RrFogLghtOn_l, 37;
+		VehSideLghtSts_l, 38;
+		FrtPsngWndOpReq_l, 40;
+		FrtPsngWndLclSwDsbld_l, 43;
+		DrvrWndLclSwDsbld_l, 44;
+		FrtPsngWndShrtMvReq_l, 46;
+		DrvrPWLOpEnb_l, 48;
+		DrvrWndOpReq_l, 49;
+		BCMOtsdMirFoldCmd_l, 52;
+		RrWndInhIndCmd_l, 54;
+		RevsGearPosLOtsdMirADC_l, 58;
+		RevsGearPosROtsdMirADC_l, 59;
+		BCMSysPwrMd_lL1, 61;
+	}
+	DDSP_LIN1_FrP00 : 0, Drivers_Door_Switch_Pack, 8	{
+		DDSPRespEr_l, 38;
+		OtsdMirMmryCtrlPosStoC_l, 42;
+		RRWndSwSts_l, 43;
+		RrWndInhSwSts_l, 46;
+		RLWndSwSts_l, 48;
+		FRWndSwSts_l, 53;
+		FLWndSwSts_l, 56;
+	}
+	MLS_LIN1_FrP00 : 2, Master_Light_Switch, 8	{
+		MLSRespEr_l, 39;
+		LMirSeldSwA_l, 40;
+		MirDwnSwA_l, 41;
+		MirFoldSwA_l, 42;
+		MirLSwA_l, 43;
+		MirRSwA_l, 44;
+		MirUpSwA_l, 45;
+		MLSAutoPosSeld_l, 46;
+		MLSDipdBeamOnPosSeld_l, 47;
+		MLSFlt1Sts_l, 48;
+		MLSFlt2Sts_l, 49;
+		MLSFlt3Sts_l, 50;
+		MLSFlt4Sts_l, 51;
+		MLSFrtFogLampOnPosSeld_l, 52;
+		MLSRrFogLampOnPosSeld_l, 53;
+		MLSSideLampOnPosSeld_l, 54;
+		RMirSeldSwA_l, 55;
+		MLSDimPos_l, 56;
+	}
+	PDC_LIN1_FrP00 : 27, PDC_Rear, 8	{
+		PDCRRSnsrFlt_l, 0;
+		PDCRLSnsrFlt_l, 1;
+		PDCRrMidLSnsrFlt_l, 2;
+		PDCRrMidRSnsrFlt_l, 3;
+		PDCOverVolFlt_l, 4;
+		PDCUnderVolFlt_l, 5;
+		RLObsRng_l, 16;
+		RRObsRng_l, 20;
+		RrMidLObsRng_l, 24;
+		RrMidRObsRng_l, 28;
+		RrObsDist_l, 40;
+		RrPDCAudWrnng_l, 52;
+		PDCSysSts_l, 56;
+		PDCCofignSts_l, 60;
+		PDCRespEr_l, 63;
+	}
+	PWL1_LIN1_FrP00 : 8, Power_Window_Lifter1, 8	{
+		PWL1RespEr_l, 46;
+		DrvrPWLNotNormd_l, 47;
+		DrvrPWLHiEftCndA_l, 48;
+		DrvrPWLRevsng_l, 49;
+		DrvrPWLSnsngSysFltDetc_l, 50;
+		DrvrPWLThrmlProtnA_l, 51;
+		DrvrPWLRelayFltDetc_l, 52;
+		DrvrWndLclSwSts_l, 53;
+		DrvrWndDclnSpc_l, 56;
+	}
+	PWL2_LIN1_FrP00 : 9, Power_Window_Lifter2, 8	{
+		PWL2RespEr_l, 46;
+		FrtPsngPWLNotNormd_l, 47;
+		FrtPsngPWLHiEftCndA_l, 48;
+		FrtPsngPWLRevsng_l, 49;
+		FrtPsngPWLSnsngSysFltD_l, 50;
+		FrtPsngPWLThrmlProtnA_l, 51;
+		FrtPsngPWLRelayFltDetc_l, 52;
+		FrtPsngWndLclSwSts_l, 53;
+		FrtPsngWndDclnSpc_l, 56;
+	}
+	UCS_LIN1_FrP00 : 38, UCS, 4	{
+		UCSFLSeatHeatSwReq_l, 0;
+		UCSFRSeatHeatSwReq_l, 2;
+		UCSRespEr_l, 4;
+	}
+}
+
+Diagnostic_frames	{
+	MasterReq: 60	{	//pub: Master
+		MasterReqB0, 0;
+		MasterReqB1, 8;
+		MasterReqB2, 16;
+		MasterReqB3, 24;
+		MasterReqB4, 32;
+		MasterReqB5, 40;
+		MasterReqB6, 48;
+		MasterReqB7, 56;
+		}
+	SlaveResp: 61	{	//pub: any slave
+		SlaveRespB0, 0;
+		SlaveRespB1, 8;
+		SlaveRespB2, 16;
+		SlaveRespB3, 24;
+		SlaveRespB4, 32;
+		SlaveRespB5, 40;
+		SlaveRespB6, 48;
+		SlaveRespB7, 56;
+		}
+	}
+
+Node_attributes{
+	Drivers_Door_Switch_Pack {
+		LIN_protocol = "2.1";
+		configured_NAD = 0x03;
+		initial_NAD = 0x03;
+		product_id = 0x0005, 0x0003;
+		response_error = DDSPRespEr_l;
+		P2_min = 50.000 ms;
+		ST_min = 20.000 ms;
+		configurable_frames {
+			BCM_LIN1_FrP00;
+			DDSP_LIN1_FrP00;
+			MLS_LIN1_FrP00;
+		}
+	}
+	Master_Light_Switch {
+		LIN_protocol = "2.1";
+		configured_NAD = 0x04;
+		initial_NAD = 0x04;
+		product_id = 0x0005, 0x0000;
+		response_error = MLSRespEr_l;
+		P2_min = 50.000 ms;
+		ST_min = 20.000 ms;
+		configurable_frames {
+			BCM_LIN1_FrP00;
+			MLS_LIN1_FrP00;
+		}
+	}
+	PDC_Rear {
+		LIN_protocol = "2.1";
+		configured_NAD = 0x16;
+		initial_NAD = 0x16;
+		product_id = 0x0770, 0xFFF0;
+		response_error = PDCRespEr_l;
+		P2_min = 50.000 ms;
+		ST_min = 20.000 ms;
+		configurable_frames {
+			BCM_LIN1_FrP00;
+			PDC_LIN1_FrP00;
+		}
+	}
+	Power_Window_Lifter1 {
+		LIN_protocol = "2.1";
+		configured_NAD = 0x08;
+		initial_NAD = 0x08;
+		product_id = 0x0005, 0x0008;
+		response_error = PWL1RespEr_l;
+		P2_min = 50.000 ms;
+		ST_min = 20.000 ms;
+		configurable_frames {
+			BCM_LIN1_FrP00;
+			PWL1_LIN1_FrP00;
+		}
+	}
+	Power_Window_Lifter2 {
+		LIN_protocol = "2.1";
+		configured_NAD = 0x09;
+		initial_NAD = 0x09;
+		product_id = 0x0005, 0x0009;
+		response_error = PWL2RespEr_l;
+		P2_min = 50.000 ms;
+		ST_min = 20.000 ms;
+		configurable_frames {
+			BCM_LIN1_FrP00;
+			PWL2_LIN1_FrP00;
+		}
+	}
+	UCS {
+		LIN_protocol = "2.1";
+		configured_NAD = 0x15;
+		initial_NAD = 0x15;
+		product_id = 0x0770, 0xFFF0;
+		response_error = UCSRespEr_l;
+		P2_min = 50.000 ms;
+		ST_min = 20.000 ms;
+		configurable_frames {
+			BCM_LIN1_FrP00;
+			UCS_LIN1_FrP00;
+		}
+	}
+}
+Schedule_tables {
+	FM_Diagnostics_L1 {
+		MasterReq	delay   50.000 ms;
+		SlaveResp	delay   10.000 ms;
+	}
+	FM_Normal1_L1 {
+		BCM_LIN1_FrP00	delay   10.000 ms;
+		PWL1_LIN1_FrP00	delay   10.000 ms;
+		DDSP_LIN1_FrP00	delay   10.000 ms;
+		PWL2_LIN1_FrP00	delay   10.000 ms;
+		MLS_LIN1_FrP00	delay   10.000 ms;
+	}
+	FM_Normal2_L1 {
+		BCM_LIN1_FrP00	delay   10.000 ms;
+		PWL1_LIN1_FrP00	delay   10.000 ms;
+		DDSP_LIN1_FrP00	delay   10.000 ms;
+		PWL2_LIN1_FrP00	delay   10.000 ms;
+		UCS_LIN1_FrP00	delay   10.000 ms;
+		BCM_LIN1_FrP00	delay   10.000 ms;
+		PWL1_LIN1_FrP00	delay   10.000 ms;
+		DDSP_LIN1_FrP00	delay   10.000 ms;
+		PWL2_LIN1_FrP00	delay   10.000 ms;
+		PDC_LIN1_FrP00	delay   10.000 ms;
+	}
+}
+
+Signal_encoding_types {
+	BCMOtsdMirFoldCmdET {
+		logical_value, 0, "No Outside Mirror Fold Unfold";
+		logical_value, 1, "Outside Mirror Fold";
+		logical_value, 2, "Outside Mirror Unfold";
+		logical_value, 3, "Outside Mirror Fold Unfold Inhibit For Vehicle Moving";
+	}
+	BooleanET {
+		logical_value, 1, "True";
+		logical_value, 0, "False";
+	}
+	DimLghtLvlET {
+		logical_value, 251, "reserved";
+		logical_value, 252, "reserved";
+		logical_value, 253, "reserved";
+		physical_value, 0, 250, 0.4, 0, "%";
+		logical_value, 254, "reserved";
+		logical_value, 255, "reserved";
+	}
+	FaultDetectedET {
+		logical_value, 0, "Fault not Detected";
+		logical_value, 1, "Fault Detected";
+	}
+	FLSeatHeatLvlET {
+		logical_value, 0, "OFF";
+		logical_value, 1, "Front left seat heat level 1";
+		logical_value, 2, "Front left seat heat level 2";
+		logical_value, 3, "Front left seat heat level 3";
+	}
+	FLWndDclnSpcET {
+		physical_value, 0, 200, 0.5, 0, "%";
+		logical_value, 255, "not initialized";
+		physical_value, 201, 204, 1, 0, "fault";
+	}
+	FRSeatHeatLvlET {
+		logical_value, 0, "OFF";
+		logical_value, 1, "Front right seat heat level 1";
+		logical_value, 2, "Front right seat heat level 2";
+		logical_value, 3, "Front right seat heat level 3";
+	}
+	FrtPsngWndDclnSpcET {
+		physical_value, 0, 200, 0.5, 0, "%";
+		logical_value, 255, "not initialized";
+		physical_value, 201, 204, 1, 0, "fault";
+	}
+	MLSDimPosET {
+		physical_value, 0, 250, 0.4, 0, "%";
+		logical_value, 251, "Reserved";
+		logical_value, 252, "Reserved";
+		logical_value, 253, "Reserved";
+		logical_value, 254, "Reserved";
+		logical_value, 255, "Reserved";
+	}
+	OtsdMirMmryCtrlOpTypCET {
+		logical_value, 0, "No Operation";
+		logical_value, 1, "Store";
+		logical_value, 2, "Recall";
+		logical_value, 3, "Reserved";
+	}
+	OtsdMirMmryCtrlPosCmdET {
+		logical_value, 0, "Addr Number1 for Memory Button 1";
+		logical_value, 1, "Addr Number2 for Memory Button 2";
+		logical_value, 2, "Addr Number3 for Memory Button 3";
+		logical_value, 3, "Addr Number4 for Key 1";
+		logical_value, 4, "Addr Number5 for Key 2";
+		logical_value, 5, "Addr Number6 for Key 3";
+		logical_value, 6, "Addr Number7 for Key 4";
+		logical_value, 7, "Reserved";
+	}
+	PDCCofignStsET {
+		logical_value, 0, "3 rear sensors";
+		logical_value, 1, "4 rear sensors";
+		logical_value, 2, "4 rear sensors and 2 front side sensors";
+		logical_value, 3, "4 rear sensors and 4 front sensors";
+		logical_value, 4, "2 rear sensors";
+		logical_value, 5, "Reserved";
+		logical_value, 6, "Reserved";
+		logical_value, 7, "Reserved";
+	}
+	PDCSnsrsNumET {
+		logical_value, 0, "1 sensor";
+		logical_value, 1, "2 sensor";
+		logical_value, 2, "3 sensor";
+		logical_value, 3, "4 sensor";
+	}
+	PDCSysEnbReqET {
+		logical_value, 0, "Disable request";
+		logical_value, 1, "Enable request";
+	}
+	PDCSysStsET {
+		logical_value, 0, "System OK";
+		logical_value, 1, "System initialization sucessful";
+		logical_value, 2, "System Failed";
+		logical_value, 3, "System Disabled";
+		logical_value, 4, "Front PDC Disabled";
+		logical_value, 5, "Front PDC Failed";
+		logical_value, 6, "Rear PDC Failed";
+		logical_value, 7, "Rear PDC Disabled";
+	}
+	RLObsRngET {
+		logical_value, 0, "No Obstacle";
+		logical_value, 1, "Range 1";
+		logical_value, 2, "Range 2";
+		logical_value, 3, "Range 3";
+		logical_value, 4, "Range 4";
+		logical_value, 5, "Range 5";
+		logical_value, 6, "Range 6";
+		logical_value, 7, "Range 7";
+		logical_value, 8, "Range 8";
+		logical_value, 9, "Range 9";
+		logical_value, 10, "Range 10";
+		logical_value, 11, "Range 11";
+		logical_value, 12, "Range 12";
+		logical_value, 13, "Range 13";
+		logical_value, 14, "Range 14";
+		logical_value, 15, "Range 15";
+	}
+	RrMidLObsRngET {
+		logical_value, 0, "No Obstacle";
+		logical_value, 1, "Range 1";
+		logical_value, 2, "Range 2";
+		logical_value, 3, "Range 3";
+		logical_value, 4, "Range 4";
+		logical_value, 5, "Range 5";
+		logical_value, 6, "Range 6";
+		logical_value, 7, "Range 7";
+		logical_value, 8, "Range 8";
+		logical_value, 9, "Range 9";
+		logical_value, 10, "Range 10";
+		logical_value, 11, "Range 11";
+		logical_value, 12, "Range 12";
+		logical_value, 13, "Range 13";
+		logical_value, 14, "Range 14";
+		logical_value, 15, "Range 15";
+	}
+	RrMidRObsRngET {
+		logical_value, 0, "No Obstacle";
+		logical_value, 1, "Range 1";
+		logical_value, 2, "Range 2";
+		logical_value, 3, "Range 3";
+		logical_value, 4, "Range 4";
+		logical_value, 5, "Range 5";
+		logical_value, 6, "Range 6";
+		logical_value, 7, "Range 7";
+		logical_value, 8, "Range 8";
+		logical_value, 9, "Range 9";
+		logical_value, 10, "Range 10";
+		logical_value, 11, "Range 11";
+		logical_value, 12, "Range 12";
+		logical_value, 13, "Range 13";
+		logical_value, 14, "Range 14";
+		logical_value, 15, "Range 15";
+	}
+	RrObsDistET {
+		physical_value, 0, 255, 1, 0, "";
+	}
+	RRObsRngET {
+		logical_value, 0, "No Obstacle";
+		logical_value, 1, "Range 1";
+		logical_value, 2, "Range 2";
+		logical_value, 3, "Range 3";
+		logical_value, 4, "Range 4";
+		logical_value, 5, "Range 5";
+		logical_value, 6, "Range 6";
+		logical_value, 7, "Range 7";
+		logical_value, 8, "Range 8";
+		logical_value, 9, "Range 9";
+		logical_value, 10, "Range 10";
+		logical_value, 11, "Range 11";
+		logical_value, 12, "Range 12";
+		logical_value, 13, "Range 13";
+		logical_value, 14, "Range 14";
+		logical_value, 15, "Range 15";
+	}
+	RrPDCAudWrnngET {
+		logical_value, 0, "No Obstacle";
+		logical_value, 1, "Range 1";
+		logical_value, 2, "Range 2";
+		logical_value, 3, "Range 3";
+		logical_value, 4, "Range 4";
+		logical_value, 5, "Range 5";
+		logical_value, 6, "Range 6";
+		logical_value, 7, "Range 7";
+		logical_value, 8, "Range 8";
+		logical_value, 9, "Range 9";
+		logical_value, 10, "Range 10";
+		logical_value, 11, "Range 11";
+		logical_value, 12, "Range 12";
+		logical_value, 13, "Range 13";
+		logical_value, 14, "Range 14";
+		logical_value, 15, "Range 15";
+	}
+	RrWndInhIndCmd {
+		logical_value, 0, "Rear Left And Right Window Inhibit Indicator Off";
+		logical_value, 1, "Rear Left Window Inhibit Indicator On";
+		logical_value, 2, "Rear Right Window Inhibit Indicator On";
+		logical_value, 3, "Rear Left And Right Window Inhibit Indicator On";
+	}
+	RrWndInhSwStsET {
+		logical_value, 0, "Rear Window Inhibit Switch Inactive";
+		logical_value, 1, "Rear Left Window Inhibit";
+		logical_value, 2, "Rear Right Window Inhibit";
+		logical_value, 3, "Rear Left And Right Window Inhibit";
+	}
+	SideLghtOnET {
+		logical_value, 0, "No side light on";
+		logical_value, 1, "side light on";
+	}
+	SwReqET {
+		logical_value, 3, "Reserved";
+		logical_value, 2, "Long press";
+		logical_value, 1, "Short press";
+		logical_value, 0, "No request";
+	}
+	SysPwrMd {
+		logical_value, 0, "Off";
+		logical_value, 1, "ACC";
+		logical_value, 2, "Run";
+		logical_value, 3, "Crank Request";
+	}
+	SysVolET {
+		physical_value, 0, 255, 0.1, 3, "V";
+	}
+	ValidityCoding {
+		logical_value, 0, "Valid";
+		logical_value, 1, "Invalid";
+	}
+	VehSideLghtStsET {
+		logical_value, 0, "No side light on ";
+		logical_value, 1, "Left side light on only";
+		logical_value, 2, "Right side light on only";
+		logical_value, 3, "All side light and license plate light on";
+	}
+	WndOpReqET {
+		logical_value, 0, "no request";
+		logical_value, 1, "up request";
+		logical_value, 2, "down request";
+		logical_value, 3, "auto up request";
+		logical_value, 4, "auto down request";
+		logical_value, 5, "reserved";
+		logical_value, 6, "reserved";
+		logical_value, 7, "reserved";
+	}
+	WndShrtMvReqET {
+		logical_value, 0, "no request";
+		logical_value, 1, "short drop";
+		logical_value, 2, "short rise";
+		logical_value, 3, "Reserved";
+	}
+	WndSwStsET {
+		logical_value, 0, "no request";
+		logical_value, 1, "up request";
+		logical_value, 2, "down request";
+		logical_value, 3, "auto up request";
+		logical_value, 4, "auto down request";
+		logical_value, 5, "reserved";
+		logical_value, 6, "reserved";
+		logical_value, 7, "reserved";
+	}
+}
+
+Signal_representation {
+	BCMOtsdMirFoldCmdET: BCMOtsdMirFoldCmd_l;
+	BooleanET: DDSPRespEr_l, DipdBeamLghtOn_l, DrvrPWLHiEftCndA_l,
+		DrvrPWLNotNormd_l, DrvrPWLOpEnb_l, DrvrPWLRelayFltDetc_l,
+		DrvrPWLRevsng_l, DrvrPWLSnsngSysFltDetc_l, DrvrPWLThrmlProtnA_l,
+		DrvrWndLclSwDsbld_l, FrtFogLghtOn_l, FrtPsngPWLHiEftCndA_l,
+		FrtPsngPWLNotNormd_l, FrtPsngPWLOpEnb_l, FrtPsngPWLRelayFltDetc_l,
+		FrtPsngPWLRevsng_l, FrtPsngPWLSnsngSysFltD_l, FrtPsngPWLThrmlProtnA_l,
+		FrtPsngWndLclSwDsbld_l, LMirSeldSwA_l, MirDwnSwA_l,
+		MirFoldSwA_l, MirLSwA_l, MirRSwA_l, MirUpSwA_l, MLSAutoLghtOn_l,
+		MLSAutoPosSeld_l, MLSDipdBeamOnPosSeld_l, MLSFrtFogLampOnPosSeld_l,
+		MLSRespEr_l, MLSRrFogLampOnPosSeld_l, MLSSideLampOnPosSeld_l,
+		OtsdMirMmryCtrlPosStoC_l, PDCOverVolFlt_l, PDCRespEr_l,
+		PDCRLSnsrFlt_l, PDCRrMidLSnsrFlt_l, PDCRrMidRSnsrFlt_l,
+		PDCRRSnsrFlt_l, PDCUnderVolFlt_l, PWL1RespEr_l, PWL2RespEr_l,
+		RevsGearPosLOtsdMirADC_l, RevsGearPosROtsdMirADC_l,
+		RMirSeldSwA_l, RrFogLghtOn_l, UCSRespEr_l;
+	DimLghtLvlET: DimLghtLvl_l;
+	FaultDetectedET: MLSFlt1Sts_l, MLSFlt2Sts_l, MLSFlt3Sts_l, MLSFlt4Sts_l;
+	FLSeatHeatLvlET: BCMFLSeatHeatLvl_l;
+	FLWndDclnSpcET: DrvrWndDclnSpc_l;
+	FRSeatHeatLvlET: BCMFRSeatHeatLvl_l;
+	FrtPsngWndDclnSpcET: FrtPsngWndDclnSpc_l;
+	MLSDimPosET: MLSDimPos_l;
+	OtsdMirMmryCtrlOpTypCET: OtsdMirMmryCtrlOpTypC_l;
+	OtsdMirMmryCtrlPosCmdET: OtsdMirMmryCtrlPosCmd_l;
+	PDCCofignStsET: PDCCofignSts_l;
+	PDCSnsrsNumET: BCMPDCSnsrsNum_lL1;
+	PDCSysEnbReqET: BCMPDCSysEnbReq_lL1;
+	PDCSysStsET: PDCSysSts_l;
+	RLObsRngET: RLObsRng_l;
+	RrMidLObsRngET: RrMidLObsRng_l;
+	RrMidRObsRngET: RrMidRObsRng_l;
+	RrObsDistET: RrObsDist_l;
+	RRObsRngET: RRObsRng_l;
+	RrPDCAudWrnngET: RrPDCAudWrnng_l;
+	RrWndInhIndCmd: RrWndInhIndCmd_l;
+	RrWndInhSwStsET: RrWndInhSwSts_l;
+	SideLghtOnET: SideLghtOn_l;
+	SwReqET: UCSFLSeatHeatSwReq_l, UCSFRSeatHeatSwReq_l;
+	SysPwrMd: BCMSysPwrMd_lL1;
+	SysVolET: SysVol_l;
+	ValidityCoding: BCMPDCSysEnbReqV_lL1, SysVolV_l;
+	VehSideLghtStsET: VehSideLghtSts_l;
+	WndOpReqET: DrvrWndOpReq_l, FrtPsngWndOpReq_l;
+	WndShrtMvReqET: DrvrWndShrtMvReq_l, FrtPsngWndShrtMvReq_l;
+	WndSwStsET: DrvrWndLclSwSts_l, FLWndSwSts_l, FrtPsngWndLclSwSts_l,
+		FRWndSwSts_l, RLWndSwSts_l, RRWndSwSts_l;
+}

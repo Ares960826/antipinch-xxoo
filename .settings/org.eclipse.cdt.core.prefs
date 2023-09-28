@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1798037815/PATH/delimiter=;
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1798037815/PATH/operation=replace
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1798037815/PATH/value=D\:\\chipways\\C2E\\GNU Tools ARM Embedded\\5.4 2016q3\\bin;C\:\\chipways\\C2E\\GNU Tools ARM Embedded\\5.4 2016q3\\bin;C\:/chipways/C2E/eclipse/jre/bin/server;C\:/chipways/C2E/eclipse/jre/bin;C\:/chipways/C2E/eclipse/jre/lib/amd64;C\:\\Program Files (x86)\\Vector vFlash 2.6\\Bin\\;C\:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C\:\\WINDOWS\\system32;C\:\\WINDOWS;C\:\\WINDOWS\\System32\\Wbem;C\:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C\:\\WINDOWS\\System32\\OpenSSH\\;C\:\\Program Files (x86)\\Common Files\\Hitachi ID\\;C\:\\Program Files\\Common Files\\Hitachi ID\\;C\:\\Python27;C\:\\Python27\\Scripts;C\:\\Python38;C\:\\Python38\\Scripts;C\:\\Program Files (x86)\\STMicroelectronics\\STM32 ST-LINK Utility\\ST-LINK Utility;C\:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;c\:\\Program Files (x86)\\Vector CANdb++ 3.1\\Exec32;C\:\\Program Files\\Git\\cmd;C\:\\Program Files\\TortoiseSVN\\bin;C\:\\Users\\wyanw003\\AppData\\Local\\Microsoft\\WindowsApps;C\:\\DDisk\\01_Software\\Python27;C\:\\chipways\\C2E\\eclipse
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1798037815/append=true
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1798037815/appendContributed=true
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.release.513845093/PATH/delimiter=;
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.release.513845093/PATH/operation=append
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.release.513845093/PATH/value=D\:\\chipways\\C2E\\GNU Tools ARM Embedded\\5.4 2016q3\\bin\\
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.release.513845093/append=true
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.release.513845093/appendContributed=true

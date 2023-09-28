@@ -1,0 +1,189 @@
+/**
+  ******************************************************************************
+  * @file     xl_spi.h
+  * @author   software group
+  * @brief    This file contains all the functions prototypes for the SPI 
+  *           firmware library.
+  ******************************************************************************
+  * @attention
+	*
+  * 2019 by Chipways Communications,Inc. All Rights Reserved.
+  * This software is supplied under the terms of a license
+  * agreement or non-disclosure agreement with Chipways.
+  * Passing on and copying of this document,and communication
+  * of its contents is not permitted without prior written
+  * authorization.
+  *
+  * <h2><center>&copy; COPYRIGHT 2019 Chipways</center></h2>
+  ******************************************************************************
+  */
+#ifndef XL_SPI_H_
+#define XL_SPI_H_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/* Includes ---------------------------------------------------------------*/
+#include "XL6600.h"
+/* Register define ------------------------------------------------------------*/
+/* CTRLR0 Bit Fields */
+#define SPI_CTRLR0_DFS_MASK                    0xFu
+#define SPI_CTRLR0_DFS_SHIFT                   0
+#define SPI_CTRLR0_SCPH_MASK                   0x40u
+#define SPI_CTRLR0_SCPH_SHIFT                  6
+#define SPI_CTRLR0_SCPOL_MASK                  0x80u
+#define SPI_CTRLR0_SCPOL_SHIFT                 7
+#define SPI_CTRLR0_TMOD_MASK                   0x300u
+#define SPI_CTRLR0_TMOD_SHIFT                  8
+#define SPI_CTRLR0_SLVOE_MASK                  0x400u
+#define SPI_CTRLR0_SLVOE_SHIFT                 10
+#define SPI_CTRLR0_SRL_MASK                    0x800u
+#define SPI_CTRLR0_SRL_SHIFT                   11
+	
+/* CTRLR1 Bit Fields */
+#define SPI_CTRLR1_NDF_MASK                    0xFFFFu
+#define SPI_CTRLR1_NDF_SHIFT                   0
+
+/* SPIENR Bit Fields */      
+#define SPI_SPIENR_SPIE_MASK                   0x1u
+#define SPI_SPIENR_SPIE_SHIFT                  0
+
+/* SER Bit Fields */
+#define SPI_SER_SSEF_MASK                      0x1u
+#define SPI_SER_SSEF_SHIFT                     0
+
+/* BAUDR Bit Fields */
+#define SPI_BAUDR_SCKDV_MASK                   0xFFFFu
+#define SPI_BAUDR_SCKDV_SHIFT                  0
+
+/* TXFTLR Bit Fields */
+#define SPI_TXFTLR_TFTL_MASK                   0xFu
+#define SPI_TXFTLR_TFTL_SHIFT                  0
+
+/* RXFTLR Bit Fields */
+#define SPI_RXFTLR_RFTL_MASK                   0xFu
+#define SPI_RXFTLR_RFTL_SHIFT                  0
+
+/* TXFLR Bit Fields */
+#define SPI_TXFLR_TFL_MASK                     0x1Fu
+#define SPI_TXFLR_TFL_SHIFT                    0
+
+/* RXFLR Bit Fields */
+#define SPI_RXFLR_RFL_MASK                     0x1Fu
+#define SPI_RXFLR_RFL_SHIFT                    0
+
+ /* SR Bit Fields */
+#define SPI_SR_BUSY_MASK                       0x1u
+#define SPI_SR_BUSY_SHIFT                      0
+#define SPI_SR_TFNF_MASK                       0x2u
+#define SPI_SR_TFNF_SHIFT                      1
+#define SPI_SR_TFE_MASK                        0x4u
+#define SPI_SR_TFE_SHIFT                       2
+#define SPI_SR_RFNE_MASK                       0x8u
+#define SPI_SR_RFNE_SHIFT                      3
+#define SPI_SR_RFF_MASK                        0x10u
+#define SPI_SR_RFF_SHIFT                       4
+#define SPI_SR_TXE_MASK                        0x20u
+#define SPI_SR_TXE_SHIFT                       5
+#define SPI_SR_DCOL_MASK                       0x40u
+#define SPI_SR_DCOL_SHIFT                      6
+
+ /* IMR Bit Fields */
+#define SPI_IMR_TXEIM_MASK                     0x1u
+#define SPI_IMR_TXEIM_SHIFT                    0
+#define SPI_IMR_TXOIM_MASK                     0x2u
+#define SPI_IMR_TXOIM_SHIFT                    1
+#define SPI_IMR_RXUIM_MASK                     0x4u
+#define SPI_IMR_RXUIM_SHIFT                    2
+#define SPI_IMR_RXOIM_MASK                     0x8u
+#define SPI_IMR_RXOIM_SHIFT                    3
+#define SPI_IMR_RXFIM_MASK                     0x10u
+#define SPI_IMR_RXFIM_SHIFT                    4
+
+ /* ISR Bit Fields */
+#define SPI_ISR_TXEIS_MASK                     0x1u
+#define SPI_ISR_TXEIS_SHIFT                    0
+#define SPI_ISR_TXOIS_MASK                     0x2u
+#define SPI_ISR_TXOIS_SHIFT                    1
+#define SPI_ISR_RXUIS_MASK                     0x4u
+#define SPI_ISR_RXUIS_SHIFT                    2
+#define SPI_ISR_RXOIS_MASK                     0x8u
+#define SPI_ISR_RXOIS_SHIFT                    3
+#define SPI_ISR_RXFIS_MASK                     0x10u
+#define SPI_ISR_RXFIS_SHIFT                    4
+
+ /* RISR Bit Fields */
+#define SPI_RISR_TXEIR_MASK                    0x1u
+#define SPI_RISR_TXEIR_SHIFT                   0
+#define SPI_RISR_TXOIR_MASK                    0x2u
+#define SPI_RISR_TXOIR_SHIFT                   1
+#define SPI_RISR_RXUIR_MASK                    0x4u
+#define SPI_RISR_RXUIR_SHIFT                   2
+#define SPI_RISR_RXOIR_MASK                    0x8u
+#define SPI_RISR_RXOIR_SHIFT                   3
+#define SPI_RISR_RXFIR_MASK                    0x10u
+#define SPI_RISR_RXFIR_SHIFT                   4
+
+ /* TXOICR Bit Fields */
+#define SPI_TXOICR_CTXOI_MASK                  0x1u
+#define SPI_TXOICR_CTXOI_SHIFT                 0
+
+ /* RXOICR Bit Fields */
+#define SPI_RXOICR_CRXOI_MASK                  0x1u
+#define SPI_RXOICR_CRXOI_SHIFT                 0
+
+ /* RXUICR Bit Fields */
+#define SPI_RXUICR_CRXUI_MASK                  0x1u
+#define SPI_RXUICR_CRXUI_SHIFT                 0
+
+ /* ICR Bit Fields */
+#define SPI_ICR_CI_MASK                        0x1u
+#define SPI_ICR_CI_SHIFT                       0
+
+ /* DMACR Bit Fields */
+#define SPI_DMACR_RDMAE_MASK                   0x1u
+#define SPI_DMACR_RDMAE_SHIFT                  0
+#define SPI_DMACR_TDMAE_MASK                   0x2u
+#define SPI_DMACR_TDMAE_SHIFT                  1
+
+ /* DMATDLR Bit Fields */
+#define SPI_DMATDLR_DMATDL_MASK                0xFu
+#define SPI_DMATDLR_DMATDL_SHIFT               0
+#define SPI_DMATDLR_DMATDL_WIDTH               4
+
+ /* DMARDLR Bit Fields */
+#define SPI_DMARDLR_DMARDL_MASK                0xFu
+#define SPI_DMARDLR_DMARDL_SHIFT               0
+
+ /* DR Bit Fields */
+#define SPI_DR_DR_MASK                         0xFFFFu
+#define SPI_DR_DR_SHIFT                        0
+
+ /* MODE Bit Fields */
+#define SPI_MODE_MSTR_MASK                     0x1u
+#define SPI_MODE_MSTR_SHIFT                    0
+
+ /* MODE Bit Fields */
+#define SPI_MODE_PACK_MASK                     0x2u
+#define SPI_MODE_PACK_SHIFT                    1
+
+
+/** SPI - Register Layout Typedef */
+typedef struct {
+ __IO uint32_t  CTRLR0;                          /*!< SPI¿ØÖÆ¼Ä´æÆ÷0, offset:0x0*/
+ __IO uint32_t  CTRLR1;                          /*!< SPI¿ØÖÆ¼Ä´æÆ÷1, offset:0x04*/
+ __IO uint32_t  SPIENR;                          /*!< SPIÊ¹ÄÜ¼Ä´æÆ÷, offset:0x08*/
+      uint32_t  RESERVED_0[1];                  
+ __IO uint32_t  SER;                             /*!< SPI´Ó»úÊ¹ÄÜ¼Ä´æÆ÷, offset:0x10*/
+ __IO uint32_t  BAUDR;                           /*!< SPI²¨ÌØÂÊÑ¡Ôñ¼Ä´æÆ÷, offset:0x14*/
+ __IO uint32_t  TXFTLR;                          /*!< SPI·¢ËÍFIFOãÐÖµÉèÖÃ¼Ä´æÆ÷, offset:0x18*/
+ __IO uint32_t  RXFTLR;                          /*!< SPI½ÓÊÕFIFOãÐÖµÉèÖÃ¼Ä´æÆ÷, offset:0x1C*/
+ __I  uint32_t  TXFLR;                           /*!< SPI·¢ËÍFIFOãÐÖµ¼Ä´æÆ÷, offset:0x20*/
+ __I  uint32_t  RXFLR;                           /*!< SPI½ÓÊÕFIFOãÐÖµ¼Ä´æÆ÷, offset:0x24*/
+ __I  uint32_t  SR;                              /*!< SPI×´Ì¬¼Ä´æÆ÷, offset:0x28*/
+ __IO uint32_t  IMR;                             /*!< SPIÖÐ¶ÏÆÁ±Î¼Ä´æÆ÷, offset:0x2C*/
+ __I  uint32_t  ISR;                             /*!< SPIÖÐ¶Ï×´Ì¬¼Ä´æÆ÷, offset:0x30*/
+ __I  uint32_t  RISR;                            /*!< SPIÔ­Ê¼ÖÐ¶Ï×´Ì¬¼Ä´æÆ÷, offset:0x34*/
+ __I  uint32_t  TXOICR;                          /*!< SPI·¢ËÍFIFOÒç³öÖÐ¶ÏÇåÁã¼Ä´æÆ÷, offset:0x38*/
+ __I  uint32_t  RXOICR;                          /*!< SPI½ÓÊÕFIFOÒç³öÖÐ¶ÏÇåÁã¼Ä´æÆ÷, offset:0x3C*/
